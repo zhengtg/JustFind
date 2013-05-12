@@ -259,6 +259,153 @@ CCFollow : function () {},
 };
 
 /**
+ * @class CCGLProgram
+ */
+cc.GLProgram = {
+
+/**
+ * @method fragmentShaderLog
+ * @return A value converted from C/C++ "const char*"
+ */
+fragmentShaderLog : function () {},
+
+/**
+ * @method addAttribute
+ * @param {const char*}
+ * @param {unsigned int}
+ */
+addAttribute : function () {},
+
+/**
+ * @method setUniformLocationWithMatrix4fv
+ * @param {int}
+ * @param {float*}
+ * @param {unsigned int}
+ */
+setUniformLocationWithMatrix4fv : function () {},
+
+/**
+ * @method getUniformLocationForName
+ * @return A value converted from C/C++ "int"
+ * @param {const char*}
+ */
+getUniformLocationForName : function () {},
+
+/**
+ * @method use
+ */
+use : function () {},
+
+/**
+ * @method vertexShaderLog
+ * @return A value converted from C/C++ "const char*"
+ */
+vertexShaderLog : function () {},
+
+/**
+ * @method initWithVertexShaderByteArray
+ * @return A value converted from C/C++ "bool"
+ * @param {const char*}
+ * @param {const char*}
+ */
+initWithVertexShaderByteArray : function () {},
+
+/**
+ * @method initWithVertexShaderFilename
+ * @return A value converted from C/C++ "bool"
+ * @param {const char*}
+ * @param {const char*}
+ */
+initWithVertexShaderFilename : function () {},
+
+/**
+ * @method setUniformsForBuiltins
+ */
+setUniformsForBuiltins : function () {},
+
+/**
+ * @method setUniformLocationWith3i
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ */
+setUniformLocationWith3i : function () {},
+
+/**
+ * @method setUniformLocationWith3iv
+ * @param {int}
+ * @param {int*}
+ * @param {unsigned int}
+ */
+setUniformLocationWith3iv : function () {},
+
+/**
+ * @method updateUniforms
+ */
+updateUniforms : function () {},
+
+/**
+ * @method setUniformLocationWith4iv
+ * @param {int}
+ * @param {int*}
+ * @param {unsigned int}
+ */
+setUniformLocationWith4iv : function () {},
+
+/**
+ * @method link
+ * @return A value converted from C/C++ "bool"
+ */
+link : function () {},
+
+/**
+ * @method setUniformLocationWith2iv
+ * @param {int}
+ * @param {int*}
+ * @param {unsigned int}
+ */
+setUniformLocationWith2iv : function () {},
+
+/**
+ * @method reset
+ */
+reset : function () {},
+
+/**
+ * @method setUniformLocationWith4i
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ */
+setUniformLocationWith4i : function () {},
+
+/**
+ * @method setUniformLocationWith1i
+ * @param {int}
+ * @param {int}
+ */
+setUniformLocationWith1i : function () {},
+
+/**
+ * @method setUniformLocationWith2i
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ */
+setUniformLocationWith2i : function () {},
+
+/**
+ * @method CCGLProgram
+ * @constructor
+ */
+CCGLProgram : function () {},
+
+};
+
+/**
  * @class CCTouch
  */
 cc.Touch = {
@@ -556,6 +703,18 @@ CCTexture2D : function () {},
 cc.Node = {
 
 /**
+ * @method nodeToWorldTransform
+ * @return A value converted from C/C++ "cocos2d::CCAffineTransform"
+ */
+nodeToWorldTransform : function () {},
+
+/**
+ * @method getShaderProgram
+ * @return A value converted from C/C++ "cocos2d::CCGLProgram*"
+ */
+getShaderProgram : function () {},
+
+/**
  * @method getChildren
  * @return A value converted from C/C++ "cocos2d::CCArray*"
  */
@@ -666,6 +825,12 @@ getRotationY : function () {},
 setParent : function () {},
 
 /**
+ * @method nodeToParentTransform
+ * @return A value converted from C/C++ "cocos2d::CCAffineTransform"
+ */
+nodeToParentTransform : function () {},
+
+/**
  * @method numberOfRunningActions
  * @return A value converted from C/C++ "unsigned int"
  */
@@ -701,6 +866,11 @@ setPositionX : function () {},
  * @return A value converted from C/C++ "cocos2d::CCPoint"
  */
 getAnchorPoint : function () {},
+
+/**
+ * @method updateTransform
+ */
+updateTransform : function () {},
 
 /**
  * @method isVisible
@@ -826,6 +996,12 @@ setRotationX : function () {},
  * @param {float}
  */
 setRotationY : function () {},
+
+/**
+ * @method setAdditionalTransform
+ * @param {cocos2d::CCAffineTransform}
+ */
+setAdditionalTransform : function () {},
 
 /**
  * @method getScheduler
@@ -1004,6 +1180,18 @@ convertToNodeSpace : function () {},
  * @return A value converted from C/C++ "float"
  */
 getScale : function () {},
+
+/**
+ * @method worldToNodeTransform
+ * @return A value converted from C/C++ "cocos2d::CCAffineTransform"
+ */
+worldToNodeTransform : function () {},
+
+/**
+ * @method parentToNodeTransform
+ * @return A value converted from C/C++ "cocos2d::CCAffineTransform"
+ */
+parentToNodeTransform : function () {},
 
 /**
  * @method getCamera
@@ -3568,6 +3756,52 @@ getGrid : function () {},
 };
 
 /**
+ * @class CCStopGrid
+ */
+cc.StopGrid = {
+
+/**
+ * @method startWithTarget
+ * @param {cocos2d::CCNode*}
+ */
+startWithTarget : function () {},
+
+/**
+ * @method create
+ * @return A value converted from C/C++ "cocos2d::CCStopGrid*"
+ */
+create : function () {},
+
+};
+
+/**
+ * @class CCReuseGrid
+ */
+cc.ReuseGrid = {
+
+/**
+ * @method startWithTarget
+ * @param {cocos2d::CCNode*}
+ */
+startWithTarget : function () {},
+
+/**
+ * @method initWithTimes
+ * @return A value converted from C/C++ "bool"
+ * @param {int}
+ */
+initWithTimes : function () {},
+
+/**
+ * @method create
+ * @return A value converted from C/C++ "cocos2d::CCReuseGrid*"
+ * @param {int}
+ */
+create : function () {},
+
+};
+
+/**
  * @class CCWaves3D
  */
 cc.Waves3D = {
@@ -6000,12 +6234,6 @@ appendChild : function () {},
 reorderBatch : function () {},
 
 /**
- * @method getTexture
- * @return A value converted from C/C++ "cocos2d::CCTexture2D*"
- */
-getTexture : function () {},
-
-/**
  * @method visit
  */
 visit : function () {},
@@ -6036,6 +6264,12 @@ removeSpriteFromAtlas : function () {},
  * @param {int}
  */
 atlasIndexForChild : function () {},
+
+/**
+ * @method getTexture
+ * @return A value converted from C/C++ "cocos2d::CCTexture2D*"
+ */
+getTexture : function () {},
 
 /**
  * @method increaseAtlasCapacity
@@ -6126,6 +6360,12 @@ removeChild : function () {},
  * @param {cocos2d::CCSprite*}
  */
 highestAtlasIndexInChild : function () {},
+
+/**
+ * @method CCSpriteBatchNode
+ * @constructor
+ */
+CCSpriteBatchNode : function () {},
 
 };
 
@@ -6809,10 +7049,10 @@ cc.LayerMultiplex = {
 initWithArray : function () {},
 
 /**
- * @method switchToAndReleaseMe
+ * @method switchTo
  * @param {unsigned int}
  */
-switchToAndReleaseMe : function () {},
+switchTo : function () {},
 
 /**
  * @method addLayer
@@ -6821,10 +7061,10 @@ switchToAndReleaseMe : function () {},
 addLayer : function () {},
 
 /**
- * @method switchTo
+ * @method switchToAndReleaseMe
  * @param {unsigned int}
  */
-switchTo : function () {},
+switchToAndReleaseMe : function () {},
 
 /**
  * @method CCLayerMultiplex
@@ -9904,6 +10144,85 @@ sharedFileUtils : function () {},
 };
 
 /**
+ * @class CCApplication
+ */
+cc.Application = {
+
+/**
+ * @method getTargetPlatform
+ * @return A value converted from C/C++ "cocos2d::TargetPlatform"
+ */
+getTargetPlatform : function () {},
+
+/**
+ * @method setAnimationInterval
+ * @param {double}
+ */
+setAnimationInterval : function () {},
+
+/**
+ * @method getCurrentLanguage
+ * @return A value converted from C/C++ "cocos2d::ccLanguageType"
+ */
+getCurrentLanguage : function () {},
+
+/**
+ * @method sharedApplication
+ * @return A value converted from C/C++ "cocos2d::CCApplication*"
+ */
+sharedApplication : function () {},
+
+};
+
+/**
+ * @class CCShaderCache
+ */
+cc.ShaderCache = {
+
+/**
+ * @method reloadDefaultShaders
+ */
+reloadDefaultShaders : function () {},
+
+/**
+ * @method addProgram
+ * @param {cocos2d::CCGLProgram*}
+ * @param {const char*}
+ */
+addProgram : function () {},
+
+/**
+ * @method programForKey
+ * @return A value converted from C/C++ "cocos2d::CCGLProgram*"
+ * @param {const char*}
+ */
+programForKey : function () {},
+
+/**
+ * @method loadDefaultShaders
+ */
+loadDefaultShaders : function () {},
+
+/**
+ * @method sharedShaderCache
+ * @return A value converted from C/C++ "cocos2d::CCShaderCache*"
+ */
+sharedShaderCache : function () {},
+
+/**
+ * @method purgeSharedShaderCache
+ */
+purgeSharedShaderCache : function () {},
+
+/**
+ * @method CCShaderCache
+ * @constructor
+ */
+CCShaderCache : function () {},
+
+};
+
+/**
  * @class CCAnimationCache
  */
 cc.AnimationCache = {
@@ -10541,12 +10860,6 @@ positionAt : function () {},
  * @param {unsigned int}
  */
 setLayerOrientation : function () {},
-
-/**
- * @method getTiles
- * @return A value converted from C/C++ "unsigned int*"
- */
-getTiles : function () {},
 
 /**
  * @method releaseMap

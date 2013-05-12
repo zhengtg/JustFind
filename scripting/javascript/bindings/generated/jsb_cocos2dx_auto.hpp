@@ -74,6 +74,34 @@ JSBool js_cocos2dx_CCFollow_isBoundarySet(JSContext *cx, uint32_t argc, jsval *v
 JSBool js_cocos2dx_CCFollow_create(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCFollow_CCFollow(JSContext *cx, uint32_t argc, jsval *vp);
 
+extern JSClass  *jsb_CCGLProgram_class;
+extern JSObject *jsb_CCGLProgram_prototype;
+
+JSBool js_cocos2dx_CCGLProgram_constructor(JSContext *cx, uint32_t argc, jsval *vp);
+void js_cocos2dx_CCGLProgram_finalize(JSContext *cx, JSObject *obj);
+void js_register_cocos2dx_CCGLProgram(JSContext *cx, JSObject *global);
+void register_all_cocos2dx(JSContext* cx, JSObject* obj);
+JSBool js_cocos2dx_CCGLProgram_fragmentShaderLog(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_addAttribute(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWithMatrix4fv(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_getUniformLocationForName(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_use(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_vertexShaderLog(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_initWithVertexShaderByteArray(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_initWithVertexShaderFilename(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformsForBuiltins(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWith3i(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWith3iv(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_updateUniforms(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWith4iv(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_link(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWith2iv(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_reset(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWith4i(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWith1i(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_setUniformLocationWith2i(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCGLProgram_CCGLProgram(JSContext *cx, uint32_t argc, jsval *vp);
+
 extern JSClass  *jsb_CCTouch_class;
 extern JSObject *jsb_CCTouch_prototype;
 
@@ -153,6 +181,8 @@ void js_cocos2dx_CCNode_finalize(JSContext *cx, JSObject *obj);
 void js_register_cocos2dx_CCNode(JSContext *cx, JSObject *global);
 void register_all_cocos2dx(JSContext* cx, JSObject* obj);
 JSBool js_cocos2dx_CCNode_addChild(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCNode_nodeToWorldTransform(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCNode_getShaderProgram(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getChildren(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getScriptHandler(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_convertToWorldSpaceAR(JSContext *cx, uint32_t argc, jsval *vp);
@@ -173,12 +203,14 @@ JSBool js_cocos2dx_CCNode_removeAllChildrenWithCleanup(JSContext *cx, uint32_t a
 JSBool js_cocos2dx_CCNode_getRotationX(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getRotationY(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setParent(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCNode_nodeToParentTransform(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_numberOfRunningActions(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_stopActionByTag(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_reorderChild(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setPositionY(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setPositionX(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getAnchorPoint(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCNode_updateTransform(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_isVisible(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getChildrenCount(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setAnchorPoint(JSContext *cx, uint32_t argc, jsval *vp);
@@ -200,6 +232,7 @@ JSBool js_cocos2dx_CCNode_ignoreAnchorPointForPosition(JSContext *cx, uint32_t a
 JSBool js_cocos2dx_CCNode_getActionByTag(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setRotationX(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setRotationY(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCNode_setAdditionalTransform(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getScheduler(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getOrderOfArrival(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setContentSize(JSContext *cx, uint32_t argc, jsval *vp);
@@ -233,6 +266,8 @@ JSBool js_cocos2dx_CCNode_update(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_sortAllChildren(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_convertToNodeSpace(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getScale(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCNode_worldToNodeTransform(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCNode_parentToNodeTransform(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_getCamera(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_setTag(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCNode_stopAction(JSContext *cx, uint32_t argc, jsval *vp);
@@ -1102,6 +1137,27 @@ JSBool js_cocos2dx_CCTiledGrid3DAction_setTile(JSContext *cx, uint32_t argc, jsv
 JSBool js_cocos2dx_CCTiledGrid3DAction_originalTile(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCTiledGrid3DAction_getGrid(JSContext *cx, uint32_t argc, jsval *vp);
 
+extern JSClass  *jsb_CCStopGrid_class;
+extern JSObject *jsb_CCStopGrid_prototype;
+
+JSBool js_cocos2dx_CCStopGrid_constructor(JSContext *cx, uint32_t argc, jsval *vp);
+void js_cocos2dx_CCStopGrid_finalize(JSContext *cx, JSObject *obj);
+void js_register_cocos2dx_CCStopGrid(JSContext *cx, JSObject *global);
+void register_all_cocos2dx(JSContext* cx, JSObject* obj);
+JSBool js_cocos2dx_CCStopGrid_startWithTarget(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCStopGrid_create(JSContext *cx, uint32_t argc, jsval *vp);
+
+extern JSClass  *jsb_CCReuseGrid_class;
+extern JSObject *jsb_CCReuseGrid_prototype;
+
+JSBool js_cocos2dx_CCReuseGrid_constructor(JSContext *cx, uint32_t argc, jsval *vp);
+void js_cocos2dx_CCReuseGrid_finalize(JSContext *cx, JSObject *obj);
+void js_register_cocos2dx_CCReuseGrid(JSContext *cx, JSObject *global);
+void register_all_cocos2dx(JSContext* cx, JSObject* obj);
+JSBool js_cocos2dx_CCReuseGrid_startWithTarget(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCReuseGrid_initWithTimes(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCReuseGrid_create(JSContext *cx, uint32_t argc, jsval *vp);
+
 extern JSClass  *jsb_CCWaves3D_class;
 extern JSObject *jsb_CCWaves3D_prototype;
 
@@ -1765,13 +1821,13 @@ void js_register_cocos2dx_CCSpriteBatchNode(JSContext *cx, JSObject *global);
 void register_all_cocos2dx(JSContext* cx, JSObject* obj);
 JSBool js_cocos2dx_CCSpriteBatchNode_appendChild(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_reorderBatch(JSContext *cx, uint32_t argc, jsval *vp);
-JSBool js_cocos2dx_CCSpriteBatchNode_getTexture(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCSpriteBatchNode_addChild(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_visit(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_setTexture(JSContext *cx, uint32_t argc, jsval *vp);
-JSBool js_cocos2dx_CCSpriteBatchNode_addChild(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_removeChildAtIndex(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_removeSpriteFromAtlas(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_atlasIndexForChild(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCSpriteBatchNode_getTexture(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_increaseAtlasCapacity(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_init(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_insertChild(JSContext *cx, uint32_t argc, jsval *vp);
@@ -1789,6 +1845,7 @@ JSBool js_cocos2dx_CCSpriteBatchNode_removeChild(JSContext *cx, uint32_t argc, j
 JSBool js_cocos2dx_CCSpriteBatchNode_highestAtlasIndexInChild(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_create(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCSpriteBatchNode_createWithTexture(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCSpriteBatchNode_CCSpriteBatchNode(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_CCLabelBMFont_class;
 extern JSObject *jsb_CCLabelBMFont_prototype;
@@ -1948,9 +2005,9 @@ void js_cocos2dx_CCLayerMultiplex_finalize(JSContext *cx, JSObject *obj);
 void js_register_cocos2dx_CCLayerMultiplex(JSContext *cx, JSObject *global);
 void register_all_cocos2dx(JSContext* cx, JSObject* obj);
 JSBool js_cocos2dx_CCLayerMultiplex_initWithArray(JSContext *cx, uint32_t argc, jsval *vp);
-JSBool js_cocos2dx_CCLayerMultiplex_switchToAndReleaseMe(JSContext *cx, uint32_t argc, jsval *vp);
-JSBool js_cocos2dx_CCLayerMultiplex_addLayer(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCLayerMultiplex_switchTo(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCLayerMultiplex_addLayer(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCLayerMultiplex_switchToAndReleaseMe(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCLayerMultiplex_CCLayerMultiplex(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_CCScene_class;
@@ -2895,6 +2952,33 @@ JSBool js_cocos2dx_CCFileUtils_loadFilenameLookupDictionaryFromFile(JSContext *c
 JSBool js_cocos2dx_CCFileUtils_purgeFileUtils(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCFileUtils_sharedFileUtils(JSContext *cx, uint32_t argc, jsval *vp);
 
+extern JSClass  *jsb_CCApplication_class;
+extern JSObject *jsb_CCApplication_prototype;
+
+JSBool js_cocos2dx_CCApplication_constructor(JSContext *cx, uint32_t argc, jsval *vp);
+void js_cocos2dx_CCApplication_finalize(JSContext *cx, JSObject *obj);
+void js_register_cocos2dx_CCApplication(JSContext *cx, JSObject *global);
+void register_all_cocos2dx(JSContext* cx, JSObject* obj);
+JSBool js_cocos2dx_CCApplication_getTargetPlatform(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCApplication_setAnimationInterval(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCApplication_getCurrentLanguage(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCApplication_sharedApplication(JSContext *cx, uint32_t argc, jsval *vp);
+
+extern JSClass  *jsb_CCShaderCache_class;
+extern JSObject *jsb_CCShaderCache_prototype;
+
+JSBool js_cocos2dx_CCShaderCache_constructor(JSContext *cx, uint32_t argc, jsval *vp);
+void js_cocos2dx_CCShaderCache_finalize(JSContext *cx, JSObject *obj);
+void js_register_cocos2dx_CCShaderCache(JSContext *cx, JSObject *global);
+void register_all_cocos2dx(JSContext* cx, JSObject* obj);
+JSBool js_cocos2dx_CCShaderCache_reloadDefaultShaders(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCShaderCache_addProgram(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCShaderCache_programForKey(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCShaderCache_loadDefaultShaders(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCShaderCache_sharedShaderCache(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCShaderCache_purgeSharedShaderCache(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_CCShaderCache_CCShaderCache(JSContext *cx, uint32_t argc, jsval *vp);
+
 extern JSClass  *jsb_CCAnimationCache_class;
 extern JSObject *jsb_CCAnimationCache_prototype;
 
@@ -3063,7 +3147,6 @@ JSBool js_cocos2dx_CCTMXLayer_addChild(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCTMXLayer_tileGIDAt(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCTMXLayer_positionAt(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCTMXLayer_setLayerOrientation(JSContext *cx, uint32_t argc, jsval *vp);
-JSBool js_cocos2dx_CCTMXLayer_getTiles(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCTMXLayer_releaseMap(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCTMXLayer_setTiles(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_CCTMXLayer_getLayerSize(JSContext *cx, uint32_t argc, jsval *vp);

@@ -88,6 +88,12 @@ getNodesWithAnimationManagers : function () {},
  */
 getAnimationManager : function () {},
 
+/**
+ * @method setResolutionScale
+ * @param {float}
+ */
+setResolutionScale : function () {},
+
 };
 
 /**
@@ -175,12 +181,6 @@ isSelected : function () {},
 init : function () {},
 
 /**
- * @method getDefaultTouchPriority
- * @return A value converted from C/C++ "int"
- */
-getDefaultTouchPriority : function () {},
-
-/**
  * @method setHighlighted
  * @param {bool}
  */
@@ -196,12 +196,6 @@ registerWithTouchDispatcher : function () {},
  * @return A value converted from C/C++ "bool"
  */
 isHighlighted : function () {},
-
-/**
- * @method setDefaultTouchPriority
- * @param {int}
- */
-setDefaultTouchPriority : function () {},
 
 /**
  * @method CCControl
@@ -288,6 +282,12 @@ getInsetBottom : function () {},
 resizableSpriteWithCapInsets : function () {},
 
 /**
+ * @method setOpacity
+ * @param {unsigned char}
+ */
+setOpacity : function () {},
+
+/**
  * @method setContentSize
  * @param {cocos2d::CCSize}
  */
@@ -304,6 +304,12 @@ getInsetRight : function () {},
  * @return A value converted from C/C++ "cocos2d::CCSize"
  */
 getOriginalSize : function () {},
+
+/**
+ * @method setColor
+ * @param {cocos2d::ccColor3B}
+ */
+setColor : function () {},
 
 /**
  * @method getInsetTop
@@ -1230,12 +1236,6 @@ updateCellAtIndex : function () {},
 setVerticalFillOrder : function () {},
 
 /**
- * @method scrollViewDidZoom
- * @param {cocos2d::extension::CCScrollView*}
- */
-scrollViewDidZoom : function () {},
-
-/**
  * @method ccTouchBegan
  * @return A value converted from C/C++ "bool"
  * @param {cocos2d::CCTouch*}
@@ -1287,6 +1287,12 @@ ccTouchCancelled : function () {},
  * @param {cocos2d::CCEvent*}
  */
 ccTouchEnded : function () {},
+
+/**
+ * @method scrollViewDidZoom
+ * @param {cocos2d::extension::CCScrollView*}
+ */
+scrollViewDidZoom : function () {},
 
 /**
  * @method ccTouchMoved
@@ -1345,16 +1351,28 @@ setAnchorPoint : function () {},
 getText : function () {},
 
 /**
- * @method setContentSize
- * @param {cocos2d::CCSize}
+ * @method setPlaceholderFontName
+ * @param {const char*}
  */
-setContentSize : function () {},
+setPlaceholderFontName : function () {},
 
 /**
  * @method getPlaceHolder
  * @return A value converted from C/C++ "const char*"
  */
 getPlaceHolder : function () {},
+
+/**
+ * @method setFontName
+ * @param {const char*}
+ */
+setFontName : function () {},
+
+/**
+ * @method setPlaceholderFontSize
+ * @param {int}
+ */
+setPlaceholderFontSize : function () {},
 
 /**
  * @method setInputMode
@@ -1380,6 +1398,12 @@ setFontColor : function () {},
  * @param {int}
  */
 setPlaceholderFont : function () {},
+
+/**
+ * @method setFontSize
+ * @param {int}
+ */
+setFontSize : function () {},
 
 /**
  * @method initWithSizeAndBackgroundSprite
@@ -1430,6 +1454,12 @@ setText : function () {},
  * @param {int}
  */
 setMaxLength : function () {},
+
+/**
+ * @method setContentSize
+ * @param {cocos2d::CCSize}
+ */
+setContentSize : function () {},
 
 /**
  * @method setFont
