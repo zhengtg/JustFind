@@ -45,8 +45,8 @@ JSBool js_binpack_DisjointRectCollection_Disjoint(JSContext *cx, uint32_t argc, 
 			js_proxy_t *proxy;
 			JSObject *tmpObj = JSVAL_TO_OBJECT(argv[0]);
 			JS_GET_NATIVE_PROXY(proxy, tmpObj);
-			arg0 = (Rect)(proxy ? proxy->ptr : NULL);
-			JSB_PRECONDITION2( arg0, cx, JS_FALSE, "Invalid Native Object");
+			arg0 = *(Rect*)(proxy ? proxy->ptr : NULL);
+			JSB_PRECONDITION2( &arg0, cx, JS_FALSE, "Invalid Native Object");
 		} while (0);
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
 		bool ret = cobj->Disjoint(arg0);
@@ -73,8 +73,8 @@ JSBool js_binpack_DisjointRectCollection_Add(JSContext *cx, uint32_t argc, jsval
 			js_proxy_t *proxy;
 			JSObject *tmpObj = JSVAL_TO_OBJECT(argv[0]);
 			JS_GET_NATIVE_PROXY(proxy, tmpObj);
-			arg0 = (Rect)(proxy ? proxy->ptr : NULL);
-			JSB_PRECONDITION2( arg0, cx, JS_FALSE, "Invalid Native Object");
+			arg0 = *(Rect*)(proxy ? proxy->ptr : NULL);
+			JSB_PRECONDITION2( &arg0, cx, JS_FALSE, "Invalid Native Object");
 		} while (0);
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
 		bool ret = cobj->Add(arg0);
@@ -102,7 +102,7 @@ JSBool js_binpack_DisjointRectCollection_Clear(JSContext *cx, uint32_t argc, jsv
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
 	return JS_FALSE;
 }
-JSBool js_binpack_DisjointRectCollection_Disjoint(JSContext *cx, uint32_t argc, jsval *vp)
+JSBool js_binpack_DisjointRectCollection_Disjoint2(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
 	JSBool ok = JS_TRUE;
@@ -113,18 +113,18 @@ JSBool js_binpack_DisjointRectCollection_Disjoint(JSContext *cx, uint32_t argc, 
 			js_proxy_t *proxy;
 			JSObject *tmpObj = JSVAL_TO_OBJECT(argv[0]);
 			JS_GET_NATIVE_PROXY(proxy, tmpObj);
-			arg0 = (Rect)(proxy ? proxy->ptr : NULL);
-			JSB_PRECONDITION2( arg0, cx, JS_FALSE, "Invalid Native Object");
+			arg0 = *(Rect*)(proxy ? proxy->ptr : NULL);
+			JSB_PRECONDITION2( &arg0, cx, JS_FALSE, "Invalid Native Object");
 		} while (0);
 		do {
 			js_proxy_t *proxy;
 			JSObject *tmpObj = JSVAL_TO_OBJECT(argv[1]);
 			JS_GET_NATIVE_PROXY(proxy, tmpObj);
-			arg1 = (Rect)(proxy ? proxy->ptr : NULL);
-			JSB_PRECONDITION2( arg1, cx, JS_FALSE, "Invalid Native Object");
+			arg1 = *(Rect*)(proxy ? proxy->ptr : NULL);
+			JSB_PRECONDITION2( &arg1, cx, JS_FALSE, "Invalid Native Object");
 		} while (0);
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		bool ret = DisjointRectCollection::Disjoint(arg0, arg1);
+		bool ret = DisjointRectCollection::Disjoint2(arg0, arg1);
 		jsval jsret;
 		jsret = BOOLEAN_TO_JSVAL(ret);
 		JS_SET_RVAL(cx, vp, jsret);
@@ -189,7 +189,7 @@ void js_register_binpack_DisjointRectCollection(JSContext *cx, JSObject *global)
 	};
 
 	static JSFunctionSpec st_funcs[] = {
-		JS_FN("Disjoint", js_binpack_DisjointRectCollection_Disjoint, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("Disjoint", js_binpack_DisjointRectCollection_Disjoint2, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FS_END
 	};
 
@@ -255,7 +255,7 @@ JSBool js_binpack_GuillotineBinPack_Insert(JSContext *cx, uint32_t argc, jsval *
 			return JS_TRUE;
 		}
 	} while(0);
-
+/*
 	do {
 		if (argc == 5) {
 			int arg0;
@@ -275,8 +275,9 @@ JSBool js_binpack_GuillotineBinPack_Insert(JSContext *cx, uint32_t argc, jsval *
 			if (!ok) { ok = JS_TRUE; break; }
 			Rect ret = cobj->Insert(arg0, arg1, arg2, arg3, arg4);
 			jsval jsret; do {
-			if (ret) {
-				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx, ret);
+			//if (ret) {
+			if (1) {
+				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx, &ret);
 				jsret = OBJECT_TO_JSVAL(proxy->obj);
 			} else {
 				jsret = JSVAL_NULL;
@@ -286,7 +287,7 @@ JSBool js_binpack_GuillotineBinPack_Insert(JSContext *cx, uint32_t argc, jsval *
 			return JS_TRUE;
 		}
 	} while(0);
-
+*/
 	JS_ReportError(cx, "wrong number of arguments");
 	return JS_FALSE;
 }
@@ -529,30 +530,32 @@ JSBool js_binpack_MaxRectsBinPack_Insert(JSContext *cx, uint32_t argc, jsval *vp
 	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
 	cobj = (MaxRectsBinPack *)(proxy ? proxy->ptr : NULL);
 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	do {
-		if (argc == 3) {
-			int arg0;
-			ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-			if (!ok) { ok = JS_TRUE; break; }
-			int arg1;
-			ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
-			if (!ok) { ok = JS_TRUE; break; }
-			MaxRectsBinPack::FreeRectChoiceHeuristic arg2;
-			ok &= jsval_to_int32(cx, argv[2], (int32_t *)&arg2);
-			if (!ok) { ok = JS_TRUE; break; }
-			Rect ret = cobj->Insert(arg0, arg1, arg2);
-			jsval jsret; do {
-			if (ret) {
-				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx, ret);
-				jsret = OBJECT_TO_JSVAL(proxy->obj);
-			} else {
-				jsret = JSVAL_NULL;
-			}
-		} while (0);
-			JS_SET_RVAL(cx, vp, jsret);
-			return JS_TRUE;
-		}
-	} while(0);
+// 	
+// 	do {
+// 		if (argc == 3) {
+// 			int arg0;
+// 			ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
+// 			if (!ok) { ok = JS_TRUE; break; }
+// 			int arg1;
+// 			ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
+// 			if (!ok) { ok = JS_TRUE; break; }
+// 			MaxRectsBinPack::FreeRectChoiceHeuristic arg2;
+// 			ok &= jsval_to_int32(cx, argv[2], (int32_t *)&arg2);
+// 			if (!ok) { ok = JS_TRUE; break; }
+// 			Rect ret = cobj->Insert(arg0, arg1, arg2);
+// 			jsval jsret; do {
+// 			//if (ret) {
+// 			if (1) {
+// 				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx, &ret);
+// 				jsret = OBJECT_TO_JSVAL(proxy->obj);
+// 			} else {
+// 				jsret = JSVAL_NULL;
+// 			}
+// 		} while (0);
+// 			JS_SET_RVAL(cx, vp, jsret);
+// 			return JS_TRUE;
+// 		}
+// 	} while(0);
 
 	do {
 		if (argc == 3) {
@@ -752,35 +755,36 @@ JSObject *jsb_ShelfBinPack_prototype;
 
 JSBool js_binpack_ShelfBinPack_Insert(JSContext *cx, uint32_t argc, jsval *vp)
 {
-	jsval *argv = JS_ARGV(cx, vp);
-	JSBool ok = JS_TRUE;
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	ShelfBinPack* cobj = (ShelfBinPack *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 3) {
-		int arg0;
-		int arg1;
-		ShelfBinPack::ShelfChoiceHeuristic arg2;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
-		ok &= jsval_to_int32(cx, argv[2], (int32_t *)&arg2);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		Rect ret = cobj->Insert(arg0, arg1, arg2);
-		jsval jsret;
-		do {
-			if (ret) {
-				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx, ret);
-				jsret = OBJECT_TO_JSVAL(proxy->obj);
-			} else {
-				jsret = JSVAL_NULL;
-			}
-		} while (0);
-		JS_SET_RVAL(cx, vp, jsret);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 3);
+// 	jsval *argv = JS_ARGV(cx, vp);
+// 	JSBool ok = JS_TRUE;
+// 	JSObject *obj = JS_THIS_OBJECT(cx, vp);
+// 	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
+// 	ShelfBinPack* cobj = (ShelfBinPack *)(proxy ? proxy->ptr : NULL);
+// 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
+// 	if (argc == 3) {
+// 		int arg0;
+// 		int arg1;
+// 		ShelfBinPack::ShelfChoiceHeuristic arg2;
+// 		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
+// 		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
+// 		ok &= jsval_to_int32(cx, argv[2], (int32_t *)&arg2);
+// 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
+// 		Rect ret = cobj->Insert(arg0, arg1, arg2);
+// 		jsval jsret;
+// 		do {
+// 			//if (ret) {
+// 			if (1) {
+// 				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx,& ret);
+// 				jsret = OBJECT_TO_JSVAL(proxy->obj);
+// 			} else {
+// 				jsret = JSVAL_NULL;
+// 			}
+// 		} while (0);
+// 		JS_SET_RVAL(cx, vp, jsret);
+// 		return JS_TRUE;
+// 	}
+// 
+// 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 3);
 	return JS_FALSE;
 }
 JSBool js_binpack_ShelfBinPack_Init(JSContext *cx, uint32_t argc, jsval *vp)
@@ -966,33 +970,34 @@ JSObject *jsb_ShelfNextFitBinPack_prototype;
 
 JSBool js_binpack_ShelfNextFitBinPack_Insert(JSContext *cx, uint32_t argc, jsval *vp)
 {
-	jsval *argv = JS_ARGV(cx, vp);
-	JSBool ok = JS_TRUE;
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	ShelfNextFitBinPack* cobj = (ShelfNextFitBinPack *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 2) {
-		int arg0;
-		int arg1;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		ShelfNextFitBinPack::Node ret = cobj->Insert(arg0, arg1);
-		jsval jsret;
-		do {
-			if (ret) {
-				js_proxy_t *proxy = js_get_or_create_proxy<ShelfNextFitBinPack::Node>(cx, ret);
-				jsret = OBJECT_TO_JSVAL(proxy->obj);
-			} else {
-				jsret = JSVAL_NULL;
-			}
-		} while (0);
-		JS_SET_RVAL(cx, vp, jsret);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 2);
+// 	jsval *argv = JS_ARGV(cx, vp);
+// 	JSBool ok = JS_TRUE;
+// 	JSObject *obj = JS_THIS_OBJECT(cx, vp);
+// 	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
+// 	ShelfNextFitBinPack* cobj = (ShelfNextFitBinPack *)(proxy ? proxy->ptr : NULL);
+// 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
+// 	if (argc == 2) {
+// 		int arg0;
+// 		int arg1;
+// 		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
+// 		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
+// 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
+// 		ShelfNextFitBinPack::Node ret = cobj->Insert(arg0, arg1);
+// 		jsval jsret;
+// 		do {
+// 			//if (ret) {
+// 			if (1) {
+// 				js_proxy_t *proxy = js_get_or_create_proxy<ShelfNextFitBinPack::Node>(cx, &ret);
+// 				jsret = OBJECT_TO_JSVAL(proxy->obj);
+// 			} else {
+// 				jsret = JSVAL_NULL;
+// 			}
+// 		} while (0);
+// 		JS_SET_RVAL(cx, vp, jsret);
+// 		return JS_TRUE;
+// 	}
+// 
+// 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 2);
 	return JS_FALSE;
 }
 JSBool js_binpack_ShelfNextFitBinPack_Init(JSContext *cx, uint32_t argc, jsval *vp)
@@ -1133,30 +1138,31 @@ JSBool js_binpack_SkylineBinPack_Insert(JSContext *cx, uint32_t argc, jsval *vp)
 	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
 	cobj = (SkylineBinPack *)(proxy ? proxy->ptr : NULL);
 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	do {
-		if (argc == 3) {
-			int arg0;
-			ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-			if (!ok) { ok = JS_TRUE; break; }
-			int arg1;
-			ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
-			if (!ok) { ok = JS_TRUE; break; }
-			SkylineBinPack::LevelChoiceHeuristic arg2;
-			ok &= jsval_to_int32(cx, argv[2], (int32_t *)&arg2);
-			if (!ok) { ok = JS_TRUE; break; }
-			Rect ret = cobj->Insert(arg0, arg1, arg2);
-			jsval jsret; do {
-			if (ret) {
-				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx, ret);
-				jsret = OBJECT_TO_JSVAL(proxy->obj);
-			} else {
-				jsret = JSVAL_NULL;
-			}
-		} while (0);
-			JS_SET_RVAL(cx, vp, jsret);
-			return JS_TRUE;
-		}
-	} while(0);
+// 	do {
+// 		if (argc == 3) {
+// 			int arg0;
+// 			ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
+// 			if (!ok) { ok = JS_TRUE; break; }
+// 			int arg1;
+// 			ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
+// 			if (!ok) { ok = JS_TRUE; break; }
+// 			SkylineBinPack::LevelChoiceHeuristic arg2;
+// 			ok &= jsval_to_int32(cx, argv[2], (int32_t *)&arg2);
+// 			if (!ok) { ok = JS_TRUE; break; }
+// 			Rect ret = cobj->Insert(arg0, arg1, arg2);
+// 			jsval jsret; do {
+// 			//if (ret) {
+// 			if (1) {
+// 				js_proxy_t *proxy = js_get_or_create_proxy<Rect>(cx, &ret);
+// 				jsret = OBJECT_TO_JSVAL(proxy->obj);
+// 			} else {
+// 				jsret = JSVAL_NULL;
+// 			}
+// 		} while (0);
+// 			JS_SET_RVAL(cx, vp, jsret);
+// 			return JS_TRUE;
+// 		}
+// 	} while(0);
 
 	do {
 		if (argc == 3) {

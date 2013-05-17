@@ -26,13 +26,6 @@ getCellVisibleRect : function () {},
 onEnter : function () {},
 
 /**
- * @method registerScriptDoubleTouchedHandler
- * @param {int}
- * @param {int}
- */
-registerScriptDoubleTouchedHandler : function () {},
-
-/**
  * @method setSelected
  * @param {bool}
  */
@@ -55,6 +48,14 @@ setTouchDelegate : function () {},
  * @param {long long}
  */
 setPropId : function () {},
+
+/**
+ * @method fyDragDropCancelled
+ * @return A value converted from C/C++ "bool"
+ * @param {CCTouch*}
+ * @param {CCNode*}
+ */
+fyDragDropCancelled : function () {},
 
 /**
  * @method setOneTouchedDelegate
@@ -93,10 +94,12 @@ getPropIndex : function () {},
 getDoubleTouchsTimeElapse : function () {},
 
 /**
- * @method registerSavePositionHandler
- * @param {int}
+ * @method fyDragDropMoved
+ * @return A value converted from C/C++ "bool"
+ * @param {CCTouch*}
+ * @param {CCNode*}
  */
-registerSavePositionHandler : function () {},
+fyDragDropMoved : function () {},
 
 /**
  * @method getCellPosition
@@ -128,6 +131,14 @@ getOrgParent : function () {},
 cleanup : function () {},
 
 /**
+ * @method fyDragDropEnded
+ * @return A value converted from C/C++ "bool"
+ * @param {CCTouch*}
+ * @param {CCNode*}
+ */
+fyDragDropEnded : function () {},
+
+/**
  * @method getDoubleTouchsDelegate
  * @return A value converted from C/C++ "FYDoubleTouchsDelegate*"
  */
@@ -152,16 +163,12 @@ setEnableDragDrop : function () {},
 setDragCheckTime : function () {},
 
 /**
- * @method unregisterScriptOneTouchedHandler
+ * @method fyDragDropBegan
+ * @return A value converted from C/C++ "bool"
+ * @param {CCTouch*}
+ * @param {CCNode*}
  */
-unregisterScriptOneTouchedHandler : function () {},
-
-/**
- * @method registerScriptOneTouchedHandler
- * @param {int}
- * @param {int}
- */
-registerScriptOneTouchedHandler : function () {},
+fyDragDropBegan : function () {},
 
 /**
  * @method isEnableDragDrop
@@ -231,11 +238,6 @@ isTouchInside : function () {},
 isEnableDoubleTouchs : function () {},
 
 /**
- * @method unregisterScriptDoubleTouchedHandler
- */
-unregisterScriptDoubleTouchedHandler : function () {},
-
-/**
  * @method getOneTouchedDelegate
  * @return A value converted from C/C++ "FYOneTouchedDelegate*"
  */
@@ -248,22 +250,10 @@ getOneTouchedDelegate : function () {},
 setPropIndex : function () {},
 
 /**
- * @method registerScriptDragDropHandler
- * @param {int}
- * @param {int}
- */
-registerScriptDragDropHandler : function () {},
-
-/**
  * @method getShakeRange
  * @return A value converted from C/C++ "int"
  */
 getShakeRange : function () {},
-
-/**
- * @method unregisterScriptDragDropHandler
- */
-unregisterScriptDragDropHandler : function () {},
 
 /**
  * @method setHighlighted

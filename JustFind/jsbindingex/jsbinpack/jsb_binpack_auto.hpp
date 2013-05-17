@@ -15,7 +15,7 @@ void register_all_binpack(JSContext* cx, JSObject* obj);
 JSBool js_binpack_DisjointRectCollection_Disjoint(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_binpack_DisjointRectCollection_Add(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_binpack_DisjointRectCollection_Clear(JSContext *cx, uint32_t argc, jsval *vp);
-JSBool js_binpack_DisjointRectCollection_Disjoint(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_binpack_DisjointRectCollection_Disjoint2(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_GuillotineBinPack_class;
 extern JSObject *jsb_GuillotineBinPack_prototype;

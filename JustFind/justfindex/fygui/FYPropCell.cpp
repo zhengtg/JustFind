@@ -1,7 +1,7 @@
 #include "FYPropCell.h"
 #include "FYDragDropDispatcher.h"
-#include "CCLuaEngine.h"
-#include "CCScriptSupport.h"
+//#include "CCLuaEngine.h"
+//#include "CCScriptSupport.h"
 
 USING_NS_CC;
 FYPropCell::FYPropCell(void):
@@ -54,8 +54,8 @@ void FYPropCell::onExit()
 
 void FYPropCell::cleanup(void)
 {
-	unregisterScriptDragDropHandler();
-	unregisterScriptDoubleTouchedHandler();
+	//unregisterScriptDragDropHandler();
+	//unregisterScriptDoubleTouchedHandler();
 	CCSprite::cleanup();
 }
 
@@ -98,44 +98,44 @@ bool FYPropCell::isHighlighted()
 {
 	return m_bHighlighted;
 }
-CCRect& FYPropCell::getCellVisibleRect(void)
+
+const CCRect& FYPropCell::getCellVisibleRect(void)
 {
 	CCSize size = getContentSize();
 	CCSize sizeVisible = CCSizeMake(size.width*getScaleX(),size.height*getScaleY());
 	float newWidth = sizeVisible.width*cos(getRotationY()) + sizeVisible.height*sin(getRotationX());
 	float newHeight = sizeVisible.width*sin(getRotationY()) + sizeVisible.height*cos(getRotationX());
 	_cellRect = CCRectMake(getPositionX(),getPositionY(),newWidth,newHeight);
-	return _cellRect
+	return _cellRect;
 }
 
 void FYPropCell::setTouchedPriority(int touchedPriority)
 {
 	m_touchedPriority = touchedPriority;
-	if (m_bIsRunning)
+	//if (this->m_bIsRunning)
 	{
 		CCDirector::sharedDirector()->getTouchDispatcher()->setPriority(m_touchedPriority,this);
 	}
 }
-
+/*
 void  FYPropCell::registerScriptDragDropHandler(int nHandler, int nPriority )
 {	
 	m_dragDropPriority = nPriority;
 	m_dragDrapScripHandle = nHandler;
 }
-/** Unregister script drag drop events handler */
+
 void  FYPropCell::unregisterScriptDragDropHandler(void)
 {
 	m_dragDrapScripHandle = 0;
 }
 
-/** Register script double touch events handler */
+
 void  FYPropCell::registerScriptDoubleTouchedHandler(int nHandler, int nPriority)
 {
 	CC_UNUSED_PARAM(nPriority);
 	m_doubleTouchedHandle = nHandler;
 }
 
-/** Unregister script double touch events handler */
 void  FYPropCell::unregisterScriptDoubleTouchedHandler(void)
 {
 	m_doubleTouchedHandle = 0;
@@ -147,7 +147,7 @@ void FYPropCell::registerScriptOneTouchedHandler(int nHandler, int nPriority)
 	m_oneTouchedHandle = nHandler;
 }
 
-/** Unregister script drag drop events handler */
+
 void FYPropCell::unregisterScriptOneTouchedHandler(void)
 {
 	m_oneTouchedHandle = 0;
@@ -189,12 +189,12 @@ int FYPropCell::excuteScriptOneTouchedHandler()
 
 	return 0;
 }
-
+*/
 void FYPropCell::scheduleOneTouched(float time)
 {
-	if (kScriptTypeNone != m_eScriptType)
+	if (kScriptTypeLua != m_eScriptType)
 	{
-		excuteScriptOneTouchedHandler();
+		//excuteScriptOneTouchedHandler();
 	}
 	else if (_pOneTouchedDelegate)
 	{
@@ -286,9 +286,9 @@ void FYPropCell::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent
 		{
 			CC_SAFE_RELEASE_NULL(_pTouchEnd);
 			this->unschedule(schedule_selector(FYPropCell::scheduleOneTouched));
-			if (kScriptTypeNone != m_eScriptType)
+			if (kScriptTypeLua != m_eScriptType)
 			{
-				excuteScriptDoubleTouchedHandler();
+				//excuteScriptDoubleTouchedHandler();
 			}
 			else if (this->getDoubleTouchsDelegate())
 			{
@@ -375,9 +375,9 @@ void FYPropCell::dropToLayer(FYPropCell* cell,cocos2d::CCNode *pParent)
 bool FYPropCell::fyDragDropBegan(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget)
 {	
 	dragToTopLayer(this);
-	if (kScriptTypeNone != m_eScriptType)
+	if (kScriptTypeLua != m_eScriptType)
 	{
-		excuteScriptDragDropHandler(FYDRAGDROPBEGAN,pDragTarget);
+		//excuteScriptDragDropHandler(FYDRAGDROPBEGAN,pDragTarget);
 	}	
 	return true;
 }
@@ -388,9 +388,9 @@ bool FYPropCell::fyDragDropMoved(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDra
 	point = CCDirector::sharedDirector()->convertToGL(point);
 	setPosition(point);
 	//setPosition(this->getParent()->convertTouchToNodeSpace(pTouch));
-	if (kScriptTypeNone != m_eScriptType)
+	if (kScriptTypeLua != m_eScriptType)
 	{
-		excuteScriptDragDropHandler(FYDRAGDROPMOVED,pDragTarget);
+		//excuteScriptDragDropHandler(FYDRAGDROPMOVED,pDragTarget);
 	}
 	return true;
 }
@@ -404,11 +404,11 @@ bool FYPropCell::fyDragDropEnded(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDra
 	}
 	else if (this->isVisible() && isTouchInside(pTouch) )
 	{
-		if (kScriptTypeNone != m_eScriptType)
+		if (kScriptTypeLua != m_eScriptType)
 		{
 			// 拖到其他目标上，优先在其他目标上进行进行脚本处理,
 			// 若处理了，返回ture，否则返回false
-			return excuteScriptDragDropHandler(FYDRAGDROPENDED,pDragTarget)==0?false:true;
+			//return excuteScriptDragDropHandler(FYDRAGDROPENDED,pDragTarget)==0?false:true;
 		}
 
 		// 其他目标拖动本目标上
@@ -473,18 +473,18 @@ inline bool FYPropCell::isDoubleTouch()
 	}
 };
 
-void FYPropCell::registerSavePositionHandler(int nHandler)
-{
-    m_saveCellPositionHandle = nHandler;
-}
-
+// void FYPropCell::registerSavePositionHandler(int nHandler)
+// {
+//     m_saveCellPositionHandle = nHandler;
+// }
+// 
 void FYPropCell::setCellPosition(int var)
 {
     _cellPos = var;
-    if (m_saveCellPositionHandle != 0)
-    {
-        CCLuaEngine * engine = static_cast<CCLuaEngine *>(CCScriptEngineManager::sharedManager()->getScriptEngine());
-		engine->pushCCObject(this, "FYPropCell");
-		engine->executeFunctionByHandler(m_saveCellPositionHandle, 1);
-    }
+//     if (m_saveCellPositionHandle != 0)
+//     {
+//         CCLuaEngine * engine = static_cast<CCLuaEngine *>(CCScriptEngineManager::sharedManager()->getScriptEngine());
+// 		engine->pushCCObject(this, "FYPropCell");
+// 		engine->executeFunctionByHandler(m_saveCellPositionHandle, 1);
+//     }
 }

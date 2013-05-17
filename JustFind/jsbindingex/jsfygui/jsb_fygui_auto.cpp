@@ -80,36 +80,6 @@ JSBool js_fygui_FYPropCell_onEnter(JSContext *cx, uint32_t argc, jsval *vp)
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
 	return JS_FALSE;
 }
-JSBool js_fygui_FYPropCell_registerScriptDoubleTouchedHandler(JSContext *cx, uint32_t argc, jsval *vp)
-{
-	jsval *argv = JS_ARGV(cx, vp);
-	JSBool ok = JS_TRUE;
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 1) {
-		int arg0;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->registerScriptDoubleTouchedHandler(arg0);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
-	if (argc == 2) {
-		int arg0;
-		int arg1;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->registerScriptDoubleTouchedHandler(arg0, arg1);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
-	return JS_FALSE;
-}
 JSBool js_fygui_FYPropCell_setSelected(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
@@ -188,6 +158,30 @@ JSBool js_fygui_FYPropCell_setPropId(JSContext *cx, uint32_t argc, jsval *vp)
 	}
 
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
+	return JS_FALSE;
+}
+JSBool js_fygui_FYPropCell_fyDragDropCancelled(JSContext *cx, uint32_t argc, jsval *vp)
+{
+	jsval *argv = JS_ARGV(cx, vp);
+	JSBool ok = JS_TRUE;
+	JSObject *obj = JS_THIS_OBJECT(cx, vp);
+	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
+	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
+	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
+	if (argc == 2) {
+		CCTouch* arg0;
+		CCNode* arg1;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCTouch*;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCNode*;
+		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
+		bool ret = cobj->fyDragDropCancelled(arg0, arg1);
+		jsval jsret;
+		jsret = BOOLEAN_TO_JSVAL(ret);
+		JS_SET_RVAL(cx, vp, jsret);
+		return JS_TRUE;
+	}
+
+	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 2);
 	return JS_FALSE;
 }
 JSBool js_fygui_FYPropCell_setOneTouchedDelegate(JSContext *cx, uint32_t argc, jsval *vp)
@@ -304,7 +298,7 @@ JSBool js_fygui_FYPropCell_getDoubleTouchsTimeElapse(JSContext *cx, uint32_t arg
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
 	return JS_FALSE;
 }
-JSBool js_fygui_FYPropCell_registerSavePositionHandler(JSContext *cx, uint32_t argc, jsval *vp)
+JSBool js_fygui_FYPropCell_fyDragDropMoved(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
 	JSBool ok = JS_TRUE;
@@ -312,16 +306,20 @@ JSBool js_fygui_FYPropCell_registerSavePositionHandler(JSContext *cx, uint32_t a
 	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
 	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 1) {
-		int arg0;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
+	if (argc == 2) {
+		CCTouch* arg0;
+		CCNode* arg1;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCTouch*;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCNode*;
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->registerSavePositionHandler(arg0);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
+		bool ret = cobj->fyDragDropMoved(arg0, arg1);
+		jsval jsret;
+		jsret = BOOLEAN_TO_JSVAL(ret);
+		JS_SET_RVAL(cx, vp, jsret);
 		return JS_TRUE;
 	}
 
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
+	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 2);
 	return JS_FALSE;
 }
 JSBool js_fygui_FYPropCell_getCellPosition(JSContext *cx, uint32_t argc, jsval *vp)
@@ -405,6 +403,30 @@ JSBool js_fygui_FYPropCell_cleanup(JSContext *cx, uint32_t argc, jsval *vp)
 	}
 
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
+	return JS_FALSE;
+}
+JSBool js_fygui_FYPropCell_fyDragDropEnded(JSContext *cx, uint32_t argc, jsval *vp)
+{
+	jsval *argv = JS_ARGV(cx, vp);
+	JSBool ok = JS_TRUE;
+	JSObject *obj = JS_THIS_OBJECT(cx, vp);
+	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
+	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
+	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
+	if (argc == 2) {
+		CCTouch* arg0;
+		CCNode* arg1;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCTouch*;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCNode*;
+		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
+		bool ret = cobj->fyDragDropEnded(arg0, arg1);
+		jsval jsret;
+		jsret = BOOLEAN_TO_JSVAL(ret);
+		JS_SET_RVAL(cx, vp, jsret);
+		return JS_TRUE;
+	}
+
+	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 2);
 	return JS_FALSE;
 }
 JSBool js_fygui_FYPropCell_getDoubleTouchsDelegate(JSContext *cx, uint32_t argc, jsval *vp)
@@ -491,22 +513,7 @@ JSBool js_fygui_FYPropCell_setDragCheckTime(JSContext *cx, uint32_t argc, jsval 
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
 	return JS_FALSE;
 }
-JSBool js_fygui_FYPropCell_unregisterScriptOneTouchedHandler(JSContext *cx, uint32_t argc, jsval *vp)
-{
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 0) {
-		cobj->unregisterScriptOneTouchedHandler();
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
-	return JS_FALSE;
-}
-JSBool js_fygui_FYPropCell_registerScriptOneTouchedHandler(JSContext *cx, uint32_t argc, jsval *vp)
+JSBool js_fygui_FYPropCell_fyDragDropBegan(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
 	JSBool ok = JS_TRUE;
@@ -514,26 +521,20 @@ JSBool js_fygui_FYPropCell_registerScriptOneTouchedHandler(JSContext *cx, uint32
 	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
 	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 1) {
-		int arg0;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->registerScriptOneTouchedHandler(arg0);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
 	if (argc == 2) {
-		int arg0;
-		int arg1;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
+		CCTouch* arg0;
+		CCNode* arg1;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCTouch*;
+		#pragma warning NO CONVERSION TO NATIVE FOR CCNode*;
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->registerScriptOneTouchedHandler(arg0, arg1);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
+		bool ret = cobj->fyDragDropBegan(arg0, arg1);
+		jsval jsret;
+		jsret = BOOLEAN_TO_JSVAL(ret);
+		JS_SET_RVAL(cx, vp, jsret);
 		return JS_TRUE;
 	}
 
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
+	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 2);
 	return JS_FALSE;
 }
 JSBool js_fygui_FYPropCell_isEnableDragDrop(JSContext *cx, uint32_t argc, jsval *vp)
@@ -761,21 +762,6 @@ JSBool js_fygui_FYPropCell_isEnableDoubleTouchs(JSContext *cx, uint32_t argc, js
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
 	return JS_FALSE;
 }
-JSBool js_fygui_FYPropCell_unregisterScriptDoubleTouchedHandler(JSContext *cx, uint32_t argc, jsval *vp)
-{
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 0) {
-		cobj->unregisterScriptDoubleTouchedHandler();
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
-	return JS_FALSE;
-}
 JSBool js_fygui_FYPropCell_getOneTouchedDelegate(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	JSObject *obj = JS_THIS_OBJECT(cx, vp);
@@ -820,36 +806,6 @@ JSBool js_fygui_FYPropCell_setPropIndex(JSContext *cx, uint32_t argc, jsval *vp)
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
 	return JS_FALSE;
 }
-JSBool js_fygui_FYPropCell_registerScriptDragDropHandler(JSContext *cx, uint32_t argc, jsval *vp)
-{
-	jsval *argv = JS_ARGV(cx, vp);
-	JSBool ok = JS_TRUE;
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 1) {
-		int arg0;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->registerScriptDragDropHandler(arg0);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
-	if (argc == 2) {
-		int arg0;
-		int arg1;
-		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
-		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->registerScriptDragDropHandler(arg0, arg1);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
-	return JS_FALSE;
-}
 JSBool js_fygui_FYPropCell_getShakeRange(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	JSObject *obj = JS_THIS_OBJECT(cx, vp);
@@ -861,21 +817,6 @@ JSBool js_fygui_FYPropCell_getShakeRange(JSContext *cx, uint32_t argc, jsval *vp
 		jsval jsret;
 		jsret = int32_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 0);
-	return JS_FALSE;
-}
-JSBool js_fygui_FYPropCell_unregisterScriptDragDropHandler(JSContext *cx, uint32_t argc, jsval *vp)
-{
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	FYPropCell* cobj = (FYPropCell *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 0) {
-		cobj->unregisterScriptDragDropHandler();
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
 		return JS_TRUE;
 	}
 
@@ -1016,29 +957,29 @@ void js_register_fygui_FYPropCell(JSContext *cx, JSObject *global) {
 		JS_FN("getOrgPosition", js_fygui_FYPropCell_getOrgPosition, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getCellVisibleRect", js_fygui_FYPropCell_getCellVisibleRect, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("onEnter", js_fygui_FYPropCell_onEnter, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("registerScriptDoubleTouchedHandler", js_fygui_FYPropCell_registerScriptDoubleTouchedHandler, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setSelected", js_fygui_FYPropCell_setSelected, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setCellPosition", js_fygui_FYPropCell_setCellPosition, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setTouchDelegate", js_fygui_FYPropCell_setTouchDelegate, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setPropId", js_fygui_FYPropCell_setPropId, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("fyDragDropCancelled", js_fygui_FYPropCell_fyDragDropCancelled, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setOneTouchedDelegate", js_fygui_FYPropCell_setOneTouchedDelegate, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getTouchDelegate", js_fygui_FYPropCell_getTouchDelegate, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setDoubleTouchsTimeElapse", js_fygui_FYPropCell_setDoubleTouchsTimeElapse, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("isHighlighted", js_fygui_FYPropCell_isHighlighted, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getPropIndex", js_fygui_FYPropCell_getPropIndex, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getDoubleTouchsTimeElapse", js_fygui_FYPropCell_getDoubleTouchsTimeElapse, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("registerSavePositionHandler", js_fygui_FYPropCell_registerSavePositionHandler, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("fyDragDropMoved", js_fygui_FYPropCell_fyDragDropMoved, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getCellPosition", js_fygui_FYPropCell_getCellPosition, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getTouchedPriority", js_fygui_FYPropCell_getTouchedPriority, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("isSelected", js_fygui_FYPropCell_isSelected, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getOrgParent", js_fygui_FYPropCell_getOrgParent, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("cleanup", js_fygui_FYPropCell_cleanup, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("fyDragDropEnded", js_fygui_FYPropCell_fyDragDropEnded, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getDoubleTouchsDelegate", js_fygui_FYPropCell_getDoubleTouchsDelegate, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setShakeRange", js_fygui_FYPropCell_setShakeRange, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setEnableDragDrop", js_fygui_FYPropCell_setEnableDragDrop, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setDragCheckTime", js_fygui_FYPropCell_setDragCheckTime, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("unregisterScriptOneTouchedHandler", js_fygui_FYPropCell_unregisterScriptOneTouchedHandler, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("registerScriptOneTouchedHandler", js_fygui_FYPropCell_registerScriptOneTouchedHandler, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("fyDragDropBegan", js_fygui_FYPropCell_fyDragDropBegan, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("isEnableDragDrop", js_fygui_FYPropCell_isEnableDragDrop, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("dragToTopLayer", js_fygui_FYPropCell_dragToTopLayer, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("dropToLayer", js_fygui_FYPropCell_dropToLayer, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -1050,12 +991,9 @@ void js_register_fygui_FYPropCell(JSContext *cx, JSObject *global) {
 		JS_FN("onExit", js_fygui_FYPropCell_onExit, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("isTouchInside", js_fygui_FYPropCell_isTouchInside, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("isEnableDoubleTouchs", js_fygui_FYPropCell_isEnableDoubleTouchs, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("unregisterScriptDoubleTouchedHandler", js_fygui_FYPropCell_unregisterScriptDoubleTouchedHandler, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getOneTouchedDelegate", js_fygui_FYPropCell_getOneTouchedDelegate, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setPropIndex", js_fygui_FYPropCell_setPropIndex, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("registerScriptDragDropHandler", js_fygui_FYPropCell_registerScriptDragDropHandler, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getShakeRange", js_fygui_FYPropCell_getShakeRange, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("unregisterScriptDragDropHandler", js_fygui_FYPropCell_unregisterScriptDragDropHandler, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setHighlighted", js_fygui_FYPropCell_setHighlighted, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("ctor", js_fygui_FYPropCell_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END

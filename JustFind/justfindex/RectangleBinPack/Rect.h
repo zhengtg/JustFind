@@ -72,12 +72,12 @@ public:
 			return true;
 
 		for(size_t i = 0; i < rects.size(); ++i)
-			if (!Disjoint(rects[i], r))
+			if (!Disjoint2(rects[i], r))
 				return false;
 		return true;
 	}
 
-	static bool Disjoint(const Rect &a, const Rect &b)
+	static bool Disjoint2(const Rect &a, const Rect &b)
 	{
 		if (a.x + a.width <= b.x ||
 			b.x + b.width <= a.x ||

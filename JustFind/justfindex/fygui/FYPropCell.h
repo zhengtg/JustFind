@@ -51,14 +51,14 @@ public:
 
     CC_SYNTHESIZE(int64_t,_propId,PropId);//服务器上的唯一id
 
-    virtual const cocos2d::CCRect& getCellVisibleRect(void); 
+    const cocos2d::CCRect& getCellVisibleRect(void); 
 
     int getCellPosition(){return _cellPos;};
     void setCellPosition(int var);
     
     // 设置保存位置回调函数
     // @param1 参数1为FYPropCell类型对象，本对象
-    void registerSavePositionHandler(int nHandler);
+    //void registerSavePositionHandler(int nHandler);
 	// -------------------拖拽事件-------------------
 
 	// 对层的操作效果
@@ -115,25 +115,32 @@ public:
 	// @param2 参数2为FYPropCell类型对象，本对象
 	// @param3 参数3为FYPropCell类型对象，被拖动的对象
 	// 返回值: boolean ture表示不需要其他对象处理了，false表示自己不处理
-	void registerScriptDragDropHandler(int nHandler, int nPriority = 0);
+//	void registerScriptDragDropHandler(int nHandler, int nPriority = 0);
 	/** Unregister script drag drop events handler */
-	void unregisterScriptDragDropHandler(void);
+//	void unregisterScriptDragDropHandler(void);
 
 	/** Register script double touch events handler */
 	// nHandler要求：
 	// lua 接受该事件时，有1个参数
 	// @param FYPropCell类型对象，即被双击的对象
-	void registerScriptDoubleTouchedHandler(int nHandler, int nPriority = 0);
+//	void registerScriptDoubleTouchedHandler(int nHandler, int nPriority = 0);
 	/** Unregister script double touch events handler */
-	void unregisterScriptDoubleTouchedHandler(void);
+//	void unregisterScriptDoubleTouchedHandler(void);
 
 	/** Register script one touched events handler */
 	// nHandler要求：
 	// lua 接受该回调事件时，有1个参数
 	// @param1 参数1为FYPropCell类型对象，被单击的对象
-	void registerScriptOneTouchedHandler(int nHandler, int nPriority = 0);
+//	void registerScriptOneTouchedHandler(int nHandler, int nPriority = 0);
 	/** Unregister script drag drop events handler */
-	void unregisterScriptOneTouchedHandler(void);
+//	void unregisterScriptOneTouchedHandler(void);
+
+	// FYDragDropDelegate 代理事件
+	virtual bool fyDragDropBegan(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
+	virtual bool fyDragDropMoved(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
+	virtual bool fyDragDropEnded(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
+	virtual bool fyDragDropCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
+
 protected:
 	// CCTargetedTouchDelegate 代理事件
 	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
@@ -141,16 +148,11 @@ protected:
 	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent) ;
 	virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent) ;
 
-	// FYDragDropDelegate 代理事件
-	virtual bool fyDragDropBegan(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
-	virtual bool fyDragDropMoved(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
-	virtual bool fyDragDropEnded(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
-	virtual bool fyDragDropCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCNode *pDragTarget);
-	
+
 	// 脚本支持
-	int excuteScriptDragDropHandler(int nEventType, cocos2d::CCNode *pDragTarget);
-	int excuteScriptDoubleTouchedHandler();
-	int excuteScriptOneTouchedHandler();
+	//int excuteScriptDragDropHandler(int nEventType, cocos2d::CCNode *pDragTarget);
+	//int excuteScriptDoubleTouchedHandler();
+	//int excuteScriptOneTouchedHandler();
 	void scheduleOneTouched(float time);
 	long millisecondNow()  
 	{ 
