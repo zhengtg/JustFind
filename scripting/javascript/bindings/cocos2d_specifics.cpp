@@ -1,6 +1,7 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "cocos2d_specifics.hpp"
+//#include "binpack_specifics.hpp"
 #include <typeinfo>
 #include "js_bindings_config.h"
 #include "generated/jsb_cocos2dx_auto.hpp"

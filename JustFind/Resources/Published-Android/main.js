@@ -6,6 +6,7 @@ require("jsb_cocosbuilder.js");
 require("jsb_opengl_constants.js");
 require("jsb_opengl.js");
 require("jsb_sys.js");
+require("jsb_binpack_auto_api.js");
 
 require("AboutScene.js");
 require("GameBoard.js");

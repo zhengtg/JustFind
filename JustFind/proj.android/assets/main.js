@@ -13,38 +13,11 @@ require("GameBoard.js");
 require("GameScene.js");
 require("MainScene.js");
 
-
+require("binpack_test.js")
 function main()
-{/*
-	//test
-	var bin = new binpack.MaxRectsBinPack;
-	var bin2 = new binpack.MaxRectsBinPack;
-	var list = [70,25,52,190,12,80,95,216,17,179,45,48,76,123,64,78];
-	var binWidth = 256;
-	var binHeight = 256;
-	cc.log("Initializing bin to size %dx%d.\n", binWidth, binHeight);
-	bin.Init(binWidth, binHeight);
-	bin2.Init(binWidth, binHeight);
-
-	std::vector<RectSize> srcVector;
-	// Pack each rectangle (w_i, h_i) the user inputted on the command line.
-	for(int i = 0; i < list.lenght; i += 2)
-	{
-		// Read next rectangle to pack.
-		var rectWidth = list[i];
-		var rectHeight = list[i+1];
-		cc.log("Packing rectangle of size %dx%d: ", rectWidth, rectHeight);
-	}
-
-	var  heuristic = binpack.MaxRectsBinPack::RectBestAreaFit; // This can be changed individually even for each rectangle packed.
-	std::vector<Rect> dstVector;
-	bin2.Insert(srcVector, dstVector, heuristic);
-	for (int i = 0; i < dstVector.size();i++)
-	{
-		Rect rect = dstVector[i];
-		printf("bin2 Packed to (x,y)=(%d,%d), (w,h)=(%d,%d). Free space left: %.2f%%\n", rect.x, rect.y, rect.width, rect.height, 100.f - bin2.Occupancy()*100.f);
-	}
-	*/
+{
+	binpack_test();
+	
 	cc.FileUtils.getInstance().loadFilenameLookup("fileLookup.plist");
     //cc.Texture2D.setDefaultAlphaPixelFormat(6);
 	var director = cc.Director.getInstance();

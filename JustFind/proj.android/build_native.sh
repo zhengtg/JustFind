@@ -89,6 +89,9 @@ cp -rf "$RESROUCE_ROOT"/* "$APP_ANDROID_ROOT"/assets
 # copy bindings/*.js into assets' root
 cp -f "$BINDINGS_JS_ROOT"/*.js "$APP_ANDROID_ROOT"/assets
 
+# copy jsbindingex/*.js into assets' root
+cp -rf "$COCOS2DX_ROOT"/jsbindingex/*/*.js "$APP_ANDROID_ROOT"/assets
+
 
 echo "Using prebuilt externals"
 echo

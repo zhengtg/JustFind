@@ -9,6 +9,8 @@
 #include "cocos2d_specifics.hpp"
 #include "js_bindings_ccbreader.h"
 #include "js_bindings_system_registration.h"
+#include "jsb_fygui_auto.hpp"
+#include "jsb_binpack_auto.hpp"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -104,7 +106,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(register_all_cocos2dx_extension_manual);
     sc->addRegisterCallback(register_CCBuilderReader);
     sc->addRegisterCallback(jsb_register_system);
-    
+    sc->addRegisterCallback(register_all_binpack);
+    sc->addRegisterCallback(register_all_fygui);
+
     sc->start();
 
     js_log("RUNNING Main");

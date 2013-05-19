@@ -18,8 +18,10 @@ LOCAL_SRC_FILES := JustFind/main.cpp \
 				   
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
 					$(LOCAL_PATH)/../../../scripting/javascript/bindings\
-					$(LOCAL_PATH)/../../Classes/RectangleBinPack	\
-					$(LOCAL_PATH)/../../Classes/fygui	\
+					$(LOCAL_PATH)/../../../justfindex/RectangleBinPack	\
+					$(LOCAL_PATH)/../../../justfindex/fygui	\
+					$(LOCAL_PATH)/../../../jsbindingex/jsbinpack	\
+					$(LOCAL_PATH)/../../../jsbindingex/jsfygui	\
 					 $(LOCAL_PATH)/../../../cocos2dx/include
 			
 
@@ -37,8 +39,8 @@ include $(BUILD_SHARED_LIBRARY)
 $(call import-module,extensions)
 $(call import-module,cocos2dx)
 $(call import-module,CocosDenshion/android)
-$(call import-module,JustFind/justfindex)
 $(call import-module,scripting/javascript/spidermonkey-android)
 $(call import-module,scripting/javascript/bindings)
-$(call import-module,JustFind/jsbindingex)
+$(call import-module,justfindex)
+$(call import-module,jsbindingex)
 
