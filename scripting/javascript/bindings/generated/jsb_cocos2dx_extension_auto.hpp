@@ -269,6 +269,7 @@ void js_register_cocos2dx_extension_CCTableView(JSContext *cx, JSObject *global)
 void register_all_cocos2dx_extension(JSContext* cx, JSObject* obj);
 JSBool js_cocos2dx_extension_CCTableView_updateCellAtIndex(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_setVerticalFillOrder(JSContext *cx, uint32_t argc, jsval *vp);
+JSBool js_cocos2dx_extension_CCTableView_scrollViewDidZoom(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_ccTouchBegan(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_getVerticalFillOrder(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_removeCellAtIndex(JSContext *cx, uint32_t argc, jsval *vp);
@@ -277,7 +278,6 @@ JSBool js_cocos2dx_extension_CCTableView_scrollViewDidScroll(JSContext *cx, uint
 JSBool js_cocos2dx_extension_CCTableView_reloadData(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_ccTouchCancelled(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_ccTouchEnded(JSContext *cx, uint32_t argc, jsval *vp);
-JSBool js_cocos2dx_extension_CCTableView_scrollViewDidZoom(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_ccTouchMoved(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView__updateContentSize(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_cocos2dx_extension_CCTableView_insertCellAtIndex(JSContext *cx, uint32_t argc, jsval *vp);

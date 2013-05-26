@@ -1236,6 +1236,12 @@ updateCellAtIndex : function () {},
 setVerticalFillOrder : function () {},
 
 /**
+ * @method scrollViewDidZoom
+ * @param {cocos2d::extension::CCScrollView*}
+ */
+scrollViewDidZoom : function () {},
+
+/**
  * @method ccTouchBegan
  * @return A value converted from C/C++ "bool"
  * @param {cocos2d::CCTouch*}
@@ -1287,12 +1293,6 @@ ccTouchCancelled : function () {},
  * @param {cocos2d::CCEvent*}
  */
 ccTouchEnded : function () {},
-
-/**
- * @method scrollViewDidZoom
- * @param {cocos2d::extension::CCScrollView*}
- */
-scrollViewDidZoom : function () {},
 
 /**
  * @method ccTouchMoved

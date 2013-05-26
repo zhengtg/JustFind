@@ -7049,10 +7049,10 @@ cc.LayerMultiplex = {
 initWithArray : function () {},
 
 /**
- * @method switchTo
+ * @method switchToAndReleaseMe
  * @param {unsigned int}
  */
-switchTo : function () {},
+switchToAndReleaseMe : function () {},
 
 /**
  * @method addLayer
@@ -7061,10 +7061,10 @@ switchTo : function () {},
 addLayer : function () {},
 
 /**
- * @method switchToAndReleaseMe
+ * @method switchTo
  * @param {unsigned int}
  */
-switchToAndReleaseMe : function () {},
+switchTo : function () {},
 
 /**
  * @method CCLayerMultiplex

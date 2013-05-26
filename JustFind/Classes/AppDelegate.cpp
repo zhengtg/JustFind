@@ -34,8 +34,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     CCSize screenSize = CCEGLView::sharedOpenGLView()->getFrameSize();
 
-    CCSize designSize = CCSizeMake(320, 480);
-    CCSize resourceSize = CCSizeMake(320, 480);
+    CCSize designSize = CCSizeMake(960,640);
+    CCSize resourceSize = CCSizeMake(960,640);
     
     std::vector<std::string> searchPaths;
     std::vector<std::string> resDirOrders;
@@ -48,7 +48,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
         if (screenSize.height > 480)
         {
-            resourceSize = CCSizeMake(640, 960);
+            resourceSize = CCSizeMake( 960,640);
             resDirOrders.push_back("resources-iphonehd");
         }
         else
@@ -70,20 +70,20 @@ bool AppDelegate::applicationDidFinishLaunching()
 //        else 
         if (screenSize.height > 960)
         {
-            resourceSize = CCSizeMake(640, 960);
+            resourceSize = CCSizeMake(960,640);
             resDirOrders.push_back("resources-large");
             resDirOrders.push_back("resources-medium");
             resDirOrders.push_back("resources-small");
         }
         else if (screenSize.height > 480)
         {
-            resourceSize = CCSizeMake(480, 720);
+            resourceSize = CCSizeMake(720,480);
             resDirOrders.push_back("resources-medium");
             resDirOrders.push_back("resources-small");
         }
         else
         {
-            resourceSize = CCSizeMake(320, 568);
+            resourceSize = CCSizeMake(568,320);
             resDirOrders.push_back("resources-small");
         }
         

@@ -84,7 +84,9 @@ fi
 mkdir "$APP_ANDROID_ROOT"/assets
 
 # copy "Resources" into "assets"
-cp -rf "$RESROUCE_ROOT"/* "$APP_ANDROID_ROOT"/assets
+#cp -rf "$RESROUCE_ROOT"/* "$APP_ANDROID_ROOT"/assets
+cp -rf "$RESROUCE_ROOT"/../js/* "$APP_ANDROID_ROOT"/assets
+cp -rf "$RESROUCE_ROOT"/../props "$APP_ANDROID_ROOT"/assets
 
 # copy bindings/*.js into assets' root
 cp -f "$BINDINGS_JS_ROOT"/*.js "$APP_ANDROID_ROOT"/assets

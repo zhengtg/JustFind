@@ -34509,7 +34509,7 @@ JSBool js_cocos2dx_CCLayerMultiplex_initWithArray(JSContext *cx, uint32_t argc, 
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
 	return JS_FALSE;
 }
-JSBool js_cocos2dx_CCLayerMultiplex_switchTo(JSContext *cx, uint32_t argc, jsval *vp)
+JSBool js_cocos2dx_CCLayerMultiplex_switchToAndReleaseMe(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
 	JSBool ok = JS_TRUE;
@@ -34521,7 +34521,7 @@ JSBool js_cocos2dx_CCLayerMultiplex_switchTo(JSContext *cx, uint32_t argc, jsval
 		unsigned int arg0;
 		ok &= jsval_to_uint32(cx, argv[0], &arg0);
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->switchTo(arg0);
+		cobj->switchToAndReleaseMe(arg0);
 		JS_SET_RVAL(cx, vp, JSVAL_VOID);
 		return JS_TRUE;
 	}
@@ -34555,7 +34555,7 @@ JSBool js_cocos2dx_CCLayerMultiplex_addLayer(JSContext *cx, uint32_t argc, jsval
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
 	return JS_FALSE;
 }
-JSBool js_cocos2dx_CCLayerMultiplex_switchToAndReleaseMe(JSContext *cx, uint32_t argc, jsval *vp)
+JSBool js_cocos2dx_CCLayerMultiplex_switchTo(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
 	JSBool ok = JS_TRUE;
@@ -34567,7 +34567,7 @@ JSBool js_cocos2dx_CCLayerMultiplex_switchToAndReleaseMe(JSContext *cx, uint32_t
 		unsigned int arg0;
 		ok &= jsval_to_uint32(cx, argv[0], &arg0);
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->switchToAndReleaseMe(arg0);
+		cobj->switchTo(arg0);
 		JS_SET_RVAL(cx, vp, JSVAL_VOID);
 		return JS_TRUE;
 	}
@@ -34640,9 +34640,9 @@ void js_register_cocos2dx_CCLayerMultiplex(JSContext *cx, JSObject *global) {
 
 	static JSFunctionSpec funcs[] = {
 		JS_FN("initWithArray", js_cocos2dx_CCLayerMultiplex_initWithArray, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("switchTo", js_cocos2dx_CCLayerMultiplex_switchTo, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("addLayer", js_cocos2dx_CCLayerMultiplex_addLayer, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("switchToAndReleaseMe", js_cocos2dx_CCLayerMultiplex_switchToAndReleaseMe, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("addLayer", js_cocos2dx_CCLayerMultiplex_addLayer, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("switchTo", js_cocos2dx_CCLayerMultiplex_switchTo, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("ctor", js_cocos2dx_CCLayerMultiplex_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
 	};

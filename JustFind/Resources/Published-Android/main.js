@@ -7,21 +7,30 @@ require("jsb_opengl_constants.js");
 require("jsb_opengl.js");
 require("jsb_sys.js");
 require("jsb_binpack_auto_api.js");
+require("binpack_test.js")
+require("TSMenuItemImage.js")
 
 require("AboutScene.js");
 require("GameBoard.js");
 require("GameScene.js");
 require("MainScene.js");
 
-
+require("test_binpack_layer.js")
 function main()
 {
 	cc.FileUtils.getInstance().loadFilenameLookup("fileLookup.plist");
     //cc.Texture2D.setDefaultAlphaPixelFormat(6);
 	var director = cc.Director.getInstance();
     var scene = cc.BuilderReader.loadAsScene("MainScene");
+    
+    var layer = new TestBinPackController();
+    scene.addChild(layer);
+    
+    
     var runningScene = director.getRunningScene();
     if (runningScene === null) director.runWithScene(scene);
     else director.replaceScene(scene);
+    
+ 
 }
 main();

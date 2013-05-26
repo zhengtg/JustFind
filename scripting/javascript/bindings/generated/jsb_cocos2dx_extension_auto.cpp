@@ -5866,6 +5866,32 @@ JSBool js_cocos2dx_extension_CCTableView_setVerticalFillOrder(JSContext *cx, uin
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
 	return JS_FALSE;
 }
+JSBool js_cocos2dx_extension_CCTableView_scrollViewDidZoom(JSContext *cx, uint32_t argc, jsval *vp)
+{
+	jsval *argv = JS_ARGV(cx, vp);
+	JSBool ok = JS_TRUE;
+	JSObject *obj = JS_THIS_OBJECT(cx, vp);
+	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
+	cocos2d::extension::CCTableView* cobj = (cocos2d::extension::CCTableView *)(proxy ? proxy->ptr : NULL);
+	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
+	if (argc == 1) {
+		cocos2d::extension::CCScrollView* arg0;
+		do {
+			js_proxy_t *proxy;
+			JSObject *tmpObj = JSVAL_TO_OBJECT(argv[0]);
+			JS_GET_NATIVE_PROXY(proxy, tmpObj);
+			arg0 = (cocos2d::extension::CCScrollView*)(proxy ? proxy->ptr : NULL);
+			JSB_PRECONDITION2( arg0, cx, JS_FALSE, "Invalid Native Object");
+		} while (0);
+		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
+		cobj->scrollViewDidZoom(arg0);
+		JS_SET_RVAL(cx, vp, JSVAL_VOID);
+		return JS_TRUE;
+	}
+
+	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
+	return JS_FALSE;
+}
 JSBool js_cocos2dx_extension_CCTableView_ccTouchBegan(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
@@ -6088,32 +6114,6 @@ JSBool js_cocos2dx_extension_CCTableView_ccTouchEnded(JSContext *cx, uint32_t ar
 	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 2);
 	return JS_FALSE;
 }
-JSBool js_cocos2dx_extension_CCTableView_scrollViewDidZoom(JSContext *cx, uint32_t argc, jsval *vp)
-{
-	jsval *argv = JS_ARGV(cx, vp);
-	JSBool ok = JS_TRUE;
-	JSObject *obj = JS_THIS_OBJECT(cx, vp);
-	js_proxy_t *proxy; JS_GET_NATIVE_PROXY(proxy, obj);
-	cocos2d::extension::CCTableView* cobj = (cocos2d::extension::CCTableView *)(proxy ? proxy->ptr : NULL);
-	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "Invalid Native Object");
-	if (argc == 1) {
-		cocos2d::extension::CCScrollView* arg0;
-		do {
-			js_proxy_t *proxy;
-			JSObject *tmpObj = JSVAL_TO_OBJECT(argv[0]);
-			JS_GET_NATIVE_PROXY(proxy, tmpObj);
-			arg0 = (cocos2d::extension::CCScrollView*)(proxy ? proxy->ptr : NULL);
-			JSB_PRECONDITION2( arg0, cx, JS_FALSE, "Invalid Native Object");
-		} while (0);
-		JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-		cobj->scrollViewDidZoom(arg0);
-		JS_SET_RVAL(cx, vp, JSVAL_VOID);
-		return JS_TRUE;
-	}
-
-	JS_ReportError(cx, "wrong number of arguments: %d, was expecting %d", argc, 1);
-	return JS_FALSE;
-}
 JSBool js_cocos2dx_extension_CCTableView_ccTouchMoved(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
@@ -6302,6 +6302,7 @@ void js_register_cocos2dx_extension_CCTableView(JSContext *cx, JSObject *global)
 	static JSFunctionSpec funcs[] = {
 		JS_FN("updateCellAtIndex", js_cocos2dx_extension_CCTableView_updateCellAtIndex, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setVerticalFillOrder", js_cocos2dx_extension_CCTableView_setVerticalFillOrder, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("scrollViewDidZoom", js_cocos2dx_extension_CCTableView_scrollViewDidZoom, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("ccTouchBegan", js_cocos2dx_extension_CCTableView_ccTouchBegan, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("getVerticalFillOrder", js_cocos2dx_extension_CCTableView_getVerticalFillOrder, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("removeCellAtIndex", js_cocos2dx_extension_CCTableView_removeCellAtIndex, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -6310,7 +6311,6 @@ void js_register_cocos2dx_extension_CCTableView(JSContext *cx, JSObject *global)
 		JS_FN("reloadData", js_cocos2dx_extension_CCTableView_reloadData, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("ccTouchCancelled", js_cocos2dx_extension_CCTableView_ccTouchCancelled, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("ccTouchEnded", js_cocos2dx_extension_CCTableView_ccTouchEnded, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("scrollViewDidZoom", js_cocos2dx_extension_CCTableView_scrollViewDidZoom, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("ccTouchMoved", js_cocos2dx_extension_CCTableView_ccTouchMoved, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("_updateContentSize", js_cocos2dx_extension_CCTableView__updateContentSize, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("insertCellAtIndex", js_cocos2dx_extension_CCTableView_insertCellAtIndex, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),

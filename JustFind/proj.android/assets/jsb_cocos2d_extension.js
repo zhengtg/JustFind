@@ -134,30 +134,30 @@ cc.EDITBOX_INPUT_FLAG_INITIAL_CAPS_SENTENCE = 3;
  * @type Number
  */
 cc.EDITBOX_INPUT_FLAG_INITIAL_CAPS_ALL_CHARACTERS = 4;
-
-// PhysicsDebugNode
-cc.PhysicsDebugNode.create = function( space ) {
-    var s = space;
-    if( space.handle !== undefined )
-        s = space.handle;
-    return cc.PhysicsDebugNode._create( s );
-};
-cc.PhysicsDebugNode.prototype.setSpace = function( space ) {
-    var s = space;
-    if( space.handle !== undefined )
-        s = space.handle;
-    return this._setSpace( s );
-};
-
-// PhysicsSprite
-cc.PhysicsSprite.prototype.setBody = function( body ) {
-    var b = body;
-    if( body.handle !== undefined )
-        b = body.handle;
-    return this._setCPBody( b );
-};
+//
+//// PhysicsDebugNode
+//cc.PhysicsDebugNode.create = function( space ) {
+//    var s = space;
+//    if( space.handle !== undefined )
+//        s = space.handle;
+//    return cc.PhysicsDebugNode._create( s );
+//};
+//cc.PhysicsDebugNode.prototype.setSpace = function( space ) {
+//    var s = space;
+//    if( space.handle !== undefined )
+//        s = space.handle;
+//    return this._setSpace( s );
+//};
+//
+//// PhysicsSprite
+//cc.PhysicsSprite.prototype.setBody = function( body ) {
+//    var b = body;
+//    if( body.handle !== undefined )
+//        b = body.handle;
+//    return this._setCPBody( b );
+//};
 
 cc.ScrollView.extend = cc.Class.extend;
 cc.TableView.extend = cc.Class.extend;
 cc.TableViewCell.extend = cc.Class.extend;
-cc.GLNode.extend = cc.Class.extend;
+//cc.GLNode.extend = cc.Class.extend;
