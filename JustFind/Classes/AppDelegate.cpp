@@ -9,7 +9,7 @@
 #include "cocos2d_specifics.hpp"
 #include "js_bindings_ccbreader.h"
 #include "js_bindings_system_registration.h"
-#include "jsb_fygui_auto.hpp"
+//#include "jsb_fygui_auto.hpp"
 #include "jsb_binpack_auto.hpp"
 
 USING_NS_CC;
@@ -107,7 +107,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(register_CCBuilderReader);
     sc->addRegisterCallback(jsb_register_system);
     sc->addRegisterCallback(register_all_binpack);
-    sc->addRegisterCallback(register_all_fygui);
+   // sc->addRegisterCallback(register_all_fygui);
 
     sc->start();
 

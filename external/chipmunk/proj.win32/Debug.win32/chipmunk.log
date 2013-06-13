@@ -1,5 +1,5 @@
-﻿Build started 2013/5/5 22:33:44.
-     1>Project "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\external\chipmunk\proj.win32\chipmunk.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2013/6/4 0:26:07.
+     1>Project "D:\Develop\Android\JustFind\external\chipmunk\proj.win32\chipmunk.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include" /I..\include\chipmunk /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4068 /wd4996 /analyze- /errorReport:prompt ..\src\chipmunk.c ..\src\cpArbiter.c ..\src\cpArray.c ..\src\cpBB.c ..\src\cpBBTree.c ..\src\cpBody.c ..\src\cpCollision.c ..\src\cpHashSet.c ..\src\cpPolyShape.c ..\src\cpShape.c ..\src\cpSpace.c ..\src\cpSpaceComponent.c ..\src\cpSpaceHash.c ..\src\cpSpaceQuery.c ..\src\cpSpaceStep.c ..\src\cpSpatialIndex.c ..\src\cpSweep1D.c ..\src\cpVect.c ..\src\constraints\cpConstraint.c ..\src\constraints\cpDampedRotarySpring.c ..\src\constraints\cpDampedSpring.c ..\src\constraints\cpGearJoint.c ..\src\constraints\cpGrooveJoint.c ..\src\constraints\cpPinJoint.c ..\src\constraints\cpPivotJoint.c ..\src\constraints\cpRatchetJoint.c ..\src\constraints\cpRotaryLimitJoint.c ..\src\constraints\cpSimpleMotor.c ..\src\constraints\cpSlideJoint.c
          cpSlideJoint.c
@@ -35,7 +35,7 @@
          chipmunk.c
          Generating Code...
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\Debug.win32\libchipmunk.lib" /NOLOGO Debug.win32\chipmunk.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Develop\Android\JustFind\JustFind\proj.win32\Debug.win32\libchipmunk.lib" /NOLOGO Debug.win32\chipmunk.obj
          Debug.win32\cpArbiter.obj
          Debug.win32\cpArray.obj
          Debug.win32\cpBB.obj
@@ -64,9 +64,9 @@
          Debug.win32\cpRotaryLimitJoint.obj
          Debug.win32\cpSimpleMotor.obj
          Debug.win32\cpSlideJoint.obj
-         chipmunk.vcxproj -> D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\Debug.win32\libchipmunk.lib
-     1>Done Building Project "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\external\chipmunk\proj.win32\chipmunk.vcxproj" (Build target(s)).
+         chipmunk.vcxproj -> D:\Develop\Android\JustFind\JustFind\proj.win32\Debug.win32\libchipmunk.lib
+     1>Done Building Project "D:\Develop\Android\JustFind\external\chipmunk\proj.win32\chipmunk.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.28
+Time Elapsed 00:00:27.38

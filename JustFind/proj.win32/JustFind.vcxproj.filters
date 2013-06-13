@@ -1,27 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
     <Filter Include="Classes">
-      <UniqueIdentifier>{83371666-be62-4e91-b8cc-395730853621}</UniqueIdentifier>
+      <UniqueIdentifier>{9e93657b-f706-4b5b-a098-c55748802f76}</UniqueIdentifier>
     </Filter>
     <Filter Include="win32">
-      <UniqueIdentifier>{917fb40f-fc6d-4ee9-9a20-26debabe41aa}</UniqueIdentifier>
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="binpack">
+      <UniqueIdentifier>{afdaf8d4-f804-4eeb-b9b4-7bbd9c1f93ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="justfindex">
+      <UniqueIdentifier>{34bfffdd-9abd-42c1-a403-647c3081e657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="justfind_js">
+      <UniqueIdentifier>{919c0136-5611-4154-b52c-ccec12676bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="justfind_js\js">
+      <UniqueIdentifier>{3c241218-a146-46f0-aa89-f2e7d1b429c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\jsbindingex\jsbinpack\binpack_specifics.cpp">
+      <Filter>justfindex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\jsbindingex\jsbinpack\jsb_binpack_auto.cpp">
+      <Filter>justfindex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\justfindex\RectangleBinPack\GuillotineBinPack.cpp">
+      <Filter>binpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\justfindex\RectangleBinPack\MaxRectsBinPack.cpp">
+      <Filter>binpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\justfindex\RectangleBinPack\Rect.cpp">
+      <Filter>binpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\justfindex\RectangleBinPack\ShelfBinPack.cpp">
+      <Filter>binpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\justfindex\RectangleBinPack\ShelfNextFitBinPack.cpp">
+      <Filter>binpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\justfindex\RectangleBinPack\SkylineBinPack.cpp">
+      <Filter>binpack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\jsbindingex\jsbinpack\binpack_specifics.hpp">
+      <Filter>justfindex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\jsbindingex\jsbinpack\jsb_binpack_auto.hpp">
+      <Filter>justfindex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\justfindex\RectangleBinPack\binpack.h">
+      <Filter>binpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\justfindex\RectangleBinPack\GuillotineBinPack.h">
+      <Filter>binpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\justfindex\RectangleBinPack\MaxRectsBinPack.h">
+      <Filter>binpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\justfindex\RectangleBinPack\Rect.h">
+      <Filter>binpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\justfindex\RectangleBinPack\ShelfBinPack.h">
+      <Filter>binpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\justfindex\RectangleBinPack\ShelfNextFitBinPack.h">
+      <Filter>binpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\justfindex\RectangleBinPack\SkylineBinPack.h">
+      <Filter>binpack</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug.win32\JustFind\jsb.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_chipmunk.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_chipmunk_constants.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_cocos2d.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_cocos2d_constants.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_cocos2d_extension.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_cocosbuilder.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_debugger.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_fygui_auto_api.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_opengl.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_opengl_constants.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\jsb_sys.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\justfind_define.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\main.debug.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\main.js">
+      <Filter>justfind_js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\js\binpack_test.js">
+      <Filter>justfind_js\js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\js\jsb_binpack_auto_api.js">
+      <Filter>justfind_js\js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\js\test_binpack_layer.js">
+      <Filter>justfind_js\js</Filter>
+    </None>
+    <None Include="Debug.win32\JustFind\js\ts_utils.js">
+      <Filter>justfind_js\js</Filter>
+    </None>
   </ItemGroup>
 </Project>

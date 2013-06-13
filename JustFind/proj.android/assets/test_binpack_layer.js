@@ -22,26 +22,37 @@ var TestBinPackController = cc.LayerGradient.extend({
         this._itemMenu = cc.Menu.create();//item menu is where all the label goes, and the one gets scrolled
         
         var itemIndex = 10000;
-        for (var i = 0, len = 10; i < len; i++) {
-        	var path = "props/" + (itemIndex + i) + ".png";
-        	var menuItem = cc.MenuItemImage.create(path, path, this.onMenuCallback, this);
-            this._itemMenu.addChild(menuItem, i + itemIndex);
+        for (var i = 0, len = 50; i < len; i++) {
+        	var index = 10000+ Math.round(Math.random()*10);
+        	var path = "props/" + (index) + ".png";
+        	
+        	var menuItem = cc.Sprite.create(path);//cc.MenuItemImage.create(path, path, this.onMenuCallback, this);
+        	menuItem.setScale(Math.random());
+        	//menuItem.setRotation(Math.round(Math.random()*360));
+        	
+           // this._itemMenu.addChild(menuItem, index);
             var size = ts.getNodeVisibleSize(menuItem);
-            cc.log("pic=%d getNodeVisibleSize %f,%f",i + itemIndex,size.width,size.height);
+            cc.log("getNodeVisibleSize " + index + "," + size.width + "," + size.height);
  			var packedRect = bin.Insert(size.width, size.height, heuristic);
- 			var point = ts.covertTLPointToCenter(cc.p(packedRect.x,packedRect.y),size);
- 			cc.log("covertTLPointToCenter %f,%f,%d,%d",point.x,point.y,packedRect.x,packedRect.y);
- 			 menuItem.setPosition(point);
+ 			if (packedRect.height > 0)
+			{
+ 				var point = cc.p(packedRect.x,packedRect.y);
+ 	 			menuItem.setAnchorPoint(cc.p(0,0));
+ 	 		//	var point = ts.covertTLPointToCenter(cc.p(packedRect.x,packedRect.y),size);
+ 	 			cc.log("covertTLPointToCenter"+point.x + ","+point.y + ","+packedRect.x + ","+packedRect.y);
+ 	 			 menuItem.setPosition(point);
+ 	 			this.addChild(menuItem, index);
+			} 			
         }
 
-        this._itemMenu.setContentSize(cc.size(layerSize.width,layerSize.height));
-        this.addChild(this._itemMenu);
-        this._itemMenu.setAnchorPoint(cc.p(0,0.5));
-        this._itemMenu.setPositionX(0);
+//        this._itemMenu.setContentSize(cc.size(layerSize.width,layerSize.height));
+//        this.addChild(this._itemMenu);
+//        this._itemMenu.setAnchorPoint(cc.p(0,0));
+//        this._itemMenu.setPositionX(0);
        
     },
     onEnter:function(){
-    	this._itemMenu.setHandlerPriority(1);
+    	//this._itemMenu.setHandlerPriority(1);
     },
     onMenuCallback:function (sender) {
         var idx = sender.getZOrder();

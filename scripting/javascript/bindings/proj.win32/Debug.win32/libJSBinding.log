@@ -1,12 +1,12 @@
-﻿Build started 2013/5/5 22:39:34.
-     1>Project "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\libJSBinding.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2013/6/3 23:46:35.
+     1>Project "D:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\libJSBinding.vcxproj" on node 2 (Build target(s)).
      1>PreBuildEvent:
-         if not exist "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\Debug.win32\" mkdir "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\Debug.win32\"
-         xcopy /Y /Q "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\external\sqlite3\libraries\win32\*.*" "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\Debug.win32\"
+         if not exist "D:\Develop\Android\JustFind\JustFind\proj.win32\Debug.win32\" mkdir "D:\Develop\Android\JustFind\JustFind\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\external\sqlite3\libraries\win32\*.*" "D:\Develop\Android\JustFind\JustFind\proj.win32\Debug.win32\"
          :VCEnd
          复制了 2 个文件
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\include" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\kazmath\include" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\win32" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\third_party\win32" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\third_party\win32\pthread" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\third_party\win32\OGLES" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\CocosDenshion\include" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\.." /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\spidermonkey-win32\include" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\external\chipmunk\include\chipmunk" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\extensions" /I"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\..\..\..\..\extensions\LocalStorage" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _LIB /D DEBUG /D COCOS2D_DEBUG=1 /D XP_WIN /D JS_HAVE___INTN /D JS_INTPTR_TYPE=int /D COCOS2D_JAVASCRIPT=1 /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4068 /wd4101 /wd4800 /wd4251 /wd4996 /wd4244 /analyze- /errorReport:prompt ..\cocos2d_specifics.cpp ..\cocosjs_manual_conversions.cpp ..\generated\jsb_cocos2dx_auto.cpp ..\generated\jsb_cocos2dx_extension_auto.cpp ..\jsb_cocos2dx_extension_manual.cpp ..\jsb_opengl_functions.cpp ..\jsb_opengl_manual.cpp ..\jsb_opengl_registration.cpp ..\js_bindings_ccbreader.cpp ..\js_bindings_chipmunk_auto_classes.cpp ..\js_bindings_chipmunk_functions.cpp ..\js_bindings_chipmunk_manual.cpp ..\js_bindings_chipmunk_registration.cpp ..\js_bindings_core.cpp ..\js_bindings_opengl.cpp ..\js_bindings_system_functions.cpp ..\js_bindings_system_registration.cpp ..\js_manual_conversions.cpp ..\ScriptingCore.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\include /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\kazmath\include /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\win32 /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\third_party\win32 /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\third_party\win32\pthread /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\cocos2dx\platform\third_party\win32\OGLES /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\CocosDenshion\include /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\.. /I"D:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\spidermonkey-win32\include" /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\external\chipmunk\include\chipmunk /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\extensions /ID:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\..\..\..\..\extensions\LocalStorage /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _LIB /D DEBUG /D COCOS2D_DEBUG=1 /D XP_WIN /D JS_HAVE___INTN /D JS_INTPTR_TYPE=int /D COCOS2D_JAVASCRIPT=1 /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4068 /wd4101 /wd4800 /wd4251 /wd4996 /wd4244 /analyze- /errorReport:prompt ..\cocos2d_specifics.cpp ..\cocosjs_manual_conversions.cpp ..\generated\jsb_cocos2dx_auto.cpp ..\generated\jsb_cocos2dx_extension_auto.cpp ..\jsb_cocos2dx_extension_manual.cpp ..\jsb_opengl_functions.cpp ..\jsb_opengl_manual.cpp ..\jsb_opengl_registration.cpp ..\js_bindings_ccbreader.cpp ..\js_bindings_chipmunk_auto_classes.cpp ..\js_bindings_chipmunk_functions.cpp ..\js_bindings_chipmunk_manual.cpp ..\js_bindings_chipmunk_registration.cpp ..\js_bindings_core.cpp ..\js_bindings_opengl.cpp ..\js_bindings_system_functions.cpp ..\js_bindings_system_registration.cpp ..\js_manual_conversions.cpp ..\ScriptingCore.cpp
          ScriptingCore.cpp
          js_manual_conversions.cpp
          js_bindings_system_registration.cpp
@@ -20,104 +20,104 @@
          js_bindings_ccbreader.cpp
          jsb_opengl_registration.cpp
          jsb_opengl_manual.cpp
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\jsb_opengl_manual.cpp(385): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\develop\android\justfind\scripting\javascript\bindings\jsb_opengl_manual.cpp(385): warning C4018: '<' : signed/unsigned mismatch
          jsb_opengl_functions.cpp
          jsb_cocos2dx_extension_manual.cpp
          jsb_cocos2dx_extension_auto.cpp
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_extension_auto.cpp(2925): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_extension_auto.cpp(2925): warning C4083: expected '('; found identifier 'NO'
          jsb_cocos2dx_auto.cpp
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1253): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1420): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1459): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1500): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4191): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4194): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(9841): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(9991): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12568): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12569): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12570): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18592): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18640): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18662): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18762): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18782): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18806): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22160): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22987): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25661): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25662): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25663): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25761): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25762): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25763): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25785): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25786): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25787): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29722): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29761): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29798): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30020): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30042): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30062): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(45995): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(46256): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49895): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49899): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49961): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49965): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51708): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51726): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53285): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53376): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54553): warning C4083: expected '('; found identifier 'NO'
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54615): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1253): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1420): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1459): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1500): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4191): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4194): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(9841): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(9991): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12568): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12569): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12570): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18592): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18640): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18662): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18762): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18782): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18806): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22160): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22987): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25661): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25662): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25663): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25761): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25762): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25763): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25785): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25786): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25787): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29722): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29761): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29798): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30020): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30042): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30062): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(45995): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(46256): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49895): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49899): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49961): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49965): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51708): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51726): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53285): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53376): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54553): warning C4083: expected '('; found identifier 'NO'
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54615): warning C4083: expected '('; found identifier 'NO'
          cocosjs_manual_conversions.cpp
          cocos2d_specifics.cpp
          Generating Code...
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1256): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1462): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1503): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1423): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4196): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4196): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12572): warning C4700: uninitialized local variable 'arg2' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12572): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12572): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18641): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18663): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18763): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18807): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22163): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22990): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25665): warning C4700: uninitialized local variable 'arg2' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25665): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25665): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25765): warning C4700: uninitialized local variable 'arg2' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25765): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25765): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25789): warning C4700: uninitialized local variable 'arg2' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25789): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25789): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29762): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29799): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30021): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30043): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(45998): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(46258): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49897): warning C4700: uninitialized local variable 'arg2' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49900): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49963): warning C4700: uninitialized local variable 'arg2' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49966): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51709): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51728): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53287): warning C4700: uninitialized local variable 'arg1' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53378): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54554): warning C4700: uninitialized local variable 'jsret' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54617): warning C4700: uninitialized local variable 'arg0' used
-     1>d:\develop\android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\generated\jsb_cocos2dx_extension_auto.cpp(2928): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1256): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1503): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1423): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(1462): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4196): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(4196): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12572): warning C4700: uninitialized local variable 'arg2' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12572): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(12572): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18641): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18663): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18763): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(18807): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22163): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(22990): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25665): warning C4700: uninitialized local variable 'arg2' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25665): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25665): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25765): warning C4700: uninitialized local variable 'arg2' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25765): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25765): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25789): warning C4700: uninitialized local variable 'arg2' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25789): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(25789): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29762): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(29799): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30021): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(30043): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(45998): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(46258): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49897): warning C4700: uninitialized local variable 'arg2' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49900): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49963): warning C4700: uninitialized local variable 'arg2' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(49966): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51709): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(51728): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53287): warning C4700: uninitialized local variable 'arg1' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(53378): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54554): warning C4700: uninitialized local variable 'jsret' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_auto.cpp(54617): warning C4700: uninitialized local variable 'arg0' used
+     1>d:\develop\android\justfind\scripting\javascript\bindings\generated\jsb_cocos2dx_extension_auto.cpp(2928): warning C4700: uninitialized local variable 'arg0' used
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\Debug.win32\libJSBinding.lib" /NOLOGO Debug.win32\cocos2d_specifics.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Develop\Android\JustFind\JustFind\proj.win32\Debug.win32\libJSBinding.lib" /NOLOGO Debug.win32\cocos2d_specifics.obj
          Debug.win32\cocosjs_manual_conversions.obj
          Debug.win32\jsb_cocos2dx_auto.obj
          Debug.win32\jsb_cocos2dx_extension_auto.obj
@@ -136,9 +136,9 @@
          Debug.win32\js_bindings_system_registration.obj
          Debug.win32\js_manual_conversions.obj
          Debug.win32\ScriptingCore.obj
-         libJSBinding.vcxproj -> D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\Debug.win32\libJSBinding.lib
-     1>Done Building Project "D:\Develop\Android\cocos2d-2.1rc0-x-2.1.3\scripting\javascript\bindings\proj.win32\libJSBinding.vcxproj" (Build target(s)).
+         libJSBinding.vcxproj -> D:\Develop\Android\JustFind\JustFind\proj.win32\Debug.win32\libJSBinding.lib
+     1>Done Building Project "D:\Develop\Android\JustFind\scripting\javascript\bindings\proj.win32\libJSBinding.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:01:30.18
+Time Elapsed 00:03:56.47
